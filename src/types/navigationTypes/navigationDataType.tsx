@@ -1,1 +1,1 @@
-export interface INavigationData {navigationName:string, navigationItems:string[]|null}
+export interface INavigationData {navigationName:string, navigationItems:string[]|null, link:string|null}

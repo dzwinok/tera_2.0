@@ -16,13 +16,12 @@ export default function HeaderNavigation() {
                 <HoverCard key={`${item.navigationName}-${index}`} openDelay={100} closeDelay={0}>
                     <div className="group w-full text-center">
                         <HoverCardTrigger asChild>
-                            <Link href={"/study"}  className="bg-tera-green text-white w-full group-hover:bg-green-500 px-4 py-2 group-hover:text-black">{item.navigationName} </Link></HoverCardTrigger>
+                            <Link href={item.link ? item.link :"/"}  className="bg-tera-green text-white w-full group-hover:bg-green-500 px-4 py-2 group-hover:text-black">{item.navigationName} </Link></HoverCardTrigger>
                         {item.navigationItems && <HoverCardContent avoidCollisions={false} className=" bg-green-500 group-hover:bg-green-500 flex flex-col p-0     " >
 
                             {item.navigationItems.map((item, index) => (
                                 <div key={`${item}-${index}`} className="text-black font-[600] hover:rounded-md text-[13px] hover:bg-green-700 py-[6px] px-2  ">{item}</div>
-                                //<div><Link href={"/cources/universal"} key={`${item}-${index}`} className="text-black font-[600] hover:rounded-md text-[13px] hover:bg-green-700 py-[6px] px-2  ">{item}
-                                //                                 </Link></div>
+                                    
                             ))}
 
                         </HoverCardContent>}
@@ -39,6 +38,7 @@ const navigationDataArray: INavigationData[] = [
     {
         navigationName: "Головна",
         navigationItems: null,
+        link: "/"
     },
     {
         navigationName: "Навчання",
@@ -71,18 +71,22 @@ const navigationDataArray: INavigationData[] = [
             , "Програмування JavaScript, FrontEnd"
             , "Онлайн запис"
         ],
+        link: "/study"
     },
     {
         navigationName: "Пропозиції",
         navigationItems: null,
+        link: null
     },
     {
         navigationName: "Відгуки",
         navigationItems: null,
+        link: null
     },
     {
         navigationName: "Контакти",
         navigationItems: null,
+        link: null
     },
     {
         navigationName: "Компанія",
@@ -93,6 +97,7 @@ const navigationDataArray: INavigationData[] = [
             "Контакти Навчального центру",
             "Сертифікати"
         ],
+        link: null
     },
 
 ]
