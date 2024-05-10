@@ -1,0 +1,1 @@
+export interface INavigationData {navigationName:string, navigationItems:string[]|null}
