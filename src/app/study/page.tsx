@@ -76,7 +76,7 @@ const dataArray = [
     }, {
         nameOfCourse:"Основи програмування на мовах С/ С++",
         description: "Основи програмування на мові С  та об'єктно-орієнтоване програмування на мові С++. Курси програмістів",
-        link: null
+        link: "/cources/c_plus_plus"
     }, {
         nameOfCourse:"Об'єктно-орієнтоване програмування на мові С++",
         description: "Вивчення програм пакету Microsoft Office: Word, Excel, PowerPoint.",

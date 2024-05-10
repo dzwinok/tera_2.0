@@ -107,11 +107,11 @@ export const WavyBackground = ({
       )}
     >
       <canvas
-        className="absolute inset-x-0 bottom-0"
+          className="absolute inset-x-0 bottom-0"
         ref={canvasRef}
         id="canvas"
       ></canvas>
-      <div className={cn("relative z-10", className)} {...props}>
+      <div className={cn("relative z-10", className)}>
         {children}
       </div>
     </div>
