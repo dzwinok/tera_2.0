@@ -2,13 +2,21 @@
 "use client";
 import { CardStack } from "@/components/ui/card_reviews";
 import { cn } from "@/lib/utils";
+import React from "react";
+import { BackgroundGradientAnimation } from "@/components/ui/background-gradient-animation";
+
 export default function CardStackDemo() {
     return (
-        <div className="h-[58rem] flex items-center justify-center w-full">
-            <CardStack items={CARDS} />
+    <BackgroundGradientAnimation>
+        <div className="absolute z-50 inset-0 flex items-center justify-center">
+            <div className="h-[58rem] flex items-center justify-center w-full">
+                <CardStack  items={CARDS} />
+            </div>
         </div>
+    </BackgroundGradientAnimation>
     );
 }
+
 
 // Small utility to highlight the content of specific section of a testimonial content
 export const Highlight = ({
