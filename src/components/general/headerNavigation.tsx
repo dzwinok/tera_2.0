@@ -81,7 +81,7 @@ const navigationDataArray: INavigationData[] = [
     {
         navigationName: "Відгуки",
         navigationItems: null,
-        link: null
+        link: "/reviews"
     },
     {
         navigationName: "Контакти",
