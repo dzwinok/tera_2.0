@@ -6,12 +6,12 @@ export default function Page(){
 
     return(
         <div className="flex flex-col items-center">
-            <h2 className="text-[52px] font-[600] text-tera-green self-start px-[20%] py-5">Навчання</h2>
+            <h2 className="text-[56px] font-[750] text-tera-green self-start px-[20%] py-5">Навчання</h2>
             <div className="px-[20%] flex justify-between flex-wrap ">
                 {dataArray.map((item,index)=>(
                     <Card className="group w-[100%] mr-1 mb-[3%] md:w-[42%] lg:w-[28%] hover:bg-tera-green" key={`${item} - ${index}`}>
-                        <CardHeader><Link href={item.link ? item.link :"/study"} className="text-tera-green uppercase font-[600] text-[18px] group-hover:text-white">{item.nameOfCourse}</Link></CardHeader>
-                        <CardFooter><Link href={item.link ? item.link :"/study"} className="group-hover:text-green-500">{item.description}</Link></CardFooter>
+                        <CardHeader><Link href={item.link ? item.link :"/study"} className="text-tera-green uppercase font-[600] text-[18px] font-bold group-hover:text-white">{item.nameOfCourse}</Link></CardHeader>
+                        <CardFooter><Link href={item.link ? item.link :"/study"} className="font-semibold group-hover:text-yellow-400">{item.description}</Link></CardFooter>
                     </Card>
                 ))}
             </div>

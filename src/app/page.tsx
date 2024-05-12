@@ -5,9 +5,9 @@ import { Card,CardDescription,CardFooter,CardHeader } from "@/components/ui/card
 
 export default function Home() {
   return (
-    <main className="px-[20%] flex  flex-col items-center justify-between p-24  ">
-        <WavyBackground className=" max-w-4xl mx-[100%]] pb-40">
-            <p className="z-40 text-2xl md:text-4xl lg:text-7xl text-white font-bold inter-var text-center">
+    <main className="flex  flex-col items-center justify-between ">
+        <WavyBackground className="max-w-4xl mx-[100%]] pb-40">
+            <p className="absolute tracking-widest text-center text-9xl text-white font-bold inter-var text-center">
                 Teraconsult
             </p>
         </WavyBackground>

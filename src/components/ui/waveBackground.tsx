@@ -10,7 +10,7 @@ export const WavyBackground = ({
   colors,
   waveWidth,
   backgroundFill,
-  blur = 4,
+  blur = 6,
   speed = "fast",
   waveOpacity = 0.5,
   ...props
@@ -107,11 +107,11 @@ export const WavyBackground = ({
       )}
     >
       <canvas
-          className=" inset-x-0 bottom-0"
+        className="absolute inset-0 z-0"
         ref={canvasRef}
         id="canvas"
       ></canvas>
-      <div className={cn(" z-10", className)}>
+      <div className={cn("relative z-10", className)} {...props}>
         {children}
       </div>
     </div>

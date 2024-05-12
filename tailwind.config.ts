@@ -20,6 +20,7 @@ const config = {
     extend: {
       colors: {
         "tera-green": "#045C35",
+        "tera-light-green": "#01673a",
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
