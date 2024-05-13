@@ -42,7 +42,7 @@ const CARDS = [
     {
         id: 0,
         name: "Наталія Скуратова",
-        designation: 'Студентка курсу "ArchaCad базовий"',
+        designation: 'Студентка курсу "ArchiCad базовий"',
         content: (
             <p>
                 Доброго дня! Проходила курси АВК (кошторисна справа), <Highlight>дуже задоволена.</Highlight> Загалом
