@@ -23,8 +23,8 @@ export default function Page(){
 const dataArray = [
     {
         nameOfCourse:"Windows. Базовий (ОС Windows, Інтернет)",
-        description: "Розробка дизайну сайтів і не тільки.",
-        link: null
+        description: "Курс для початківців, що бажають опанувати основи роботи на персональному комп'ютері",
+        link: "/cources/win_base"
     }, {
         nameOfCourse:"Microsoft Office (Word, Excel, PowerPoint) ",
         description: "Вивчення програм пакету Microsoft Office: Word, Excel, PowerPoint",
@@ -33,55 +33,55 @@ const dataArray = [
         nameOfCourse:"Універсальний. (\"Windows. Базовий\" + \"Microsoft Office\")",
         description: "Курс вивчення комп'ютера для початківців у Львові",
         link: "/cources/universal"
-    }, {
+    }, /*{
         nameOfCourse:"Microsoft Excel для професіоналів*",
         description: "Основи програмування на мові С  та об'єктно-орієнтоване програмування на мові С++. Курси програмістів.",
         link: null        
-    }, {
+    },*/ {
         nameOfCourse:"Кошторисна справа з використанням програми АВК-5",
-        description: "Курс для тих, хто бажає навчитись  складати кошториси в програмі АВК-5 і здобути спеціальність кошторисника",
+        description: "Курс для тих, хто бажає навчитись складати кошториси в програмі АВК-5 і здобути спеціальність кошторисника",
         link: "/cources/avk"
     }, {
-        nameOfCourse:"Проектування в системі AutoCAD (І рівень)",
-        description: "Комп'ютерні курси різних рівнів і напрямів підготовки. ",
-        link: null
-    }, {
+        nameOfCourse:"Проектування в системі AutoCAD",
+        description: "Проектування в AutoCad та тривимірне моделювання",
+        link: "/cources/autocad"
+    }, /*{
         nameOfCourse:"AutoCAD. Тривимірне моделювання (ІІ рівень)",
         description: "Курс вивчення комп'ютера для початківців у Львові.",
         link: null
-    }, {
+    },*/ {
         nameOfCourse:"ArchiCAD базовий",
         description: "Основи проектування в системі ArchiCad.",
         link: "/cources/archicad"
     }, {
-        nameOfCourse:"Програмний комплекс Ліра-САПР,  Мономах *",
+        nameOfCourse:"Програмний комплекс Ліра-САПР",
         description: "Навчання проектуванню в програмному комплексі ЛІРА.",
-        link: null
+        link: "/cources/lira"
     }, {
         nameOfCourse:"Комп'ютерна графіка (CorelDraw, Photoshop)",
         description: "Вивчення програм CorelDraw та Photoshop.",
-        link: null
+        link: "/cources/comp_graph"
     }, {
         nameOfCourse:"Adobe Indesign",
-        description: "Курси  InDesign у Львові. Верстка і макетування, додрукова підготовка в InDesign",
+        description: "Курси InDesign у Львові. Верстка і макетування, додрукова підготовка в InDesign",
         link: "/cources/indesign"
-    }, {
+    }, /*{
         nameOfCourse:"Adobe Illustrator",
-        description: "Проектування в AutoCad та  тривимірне моделювання.",
+        description: "Проектування в AutoCad та тривимірне моделювання.",
         link: null
-    }, {
+    },*/ {
         nameOfCourse:"3D Studio Max",
         description: "Проектування 3D-моделей за допомогою програми 3D Studio Max та її візуалізація у V-Ray, Corona",
         link: "/cources/3dmax"
     }, {
-        nameOfCourse:"Основи програмування на мовах С/ С++",
+        nameOfCourse:"Основи програмування на мовах С/С++",
         description: "Основи програмування на мові С  та об'єктно-орієнтоване програмування на мові С++. Курси програмістів",
         link: "/cources/c_plus_plus"
-    }, {
+    }, /*{
         nameOfCourse:"Об'єктно-орієнтоване програмування на мові С++",
         description: "Вивчення програм пакету Microsoft Office: Word, Excel, PowerPoint.",
         link: null
-    }, {
+    },*/ {
         nameOfCourse:"Програмування в 1С (BAS) 8*",
         description: "Навчальні курси програмування в програмному середовищі 1С (BAS)",
         link: "/cources/1-c"

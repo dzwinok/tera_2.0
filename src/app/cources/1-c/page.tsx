@@ -13,7 +13,7 @@ export default function Page(){
                 <p>Є можливість обирати версію програми 1С 7.7 або 8</p>
 
             </div>
-            <span className="font-[700]">Програма курсу:</span>
+            <span className="font-[700]">Програма курсу (16 занять):</span>
             <ul className="px-6 list-inside list-disc">
                 {programmArray.map((item,index)=>(
                     <li key={index}>{item}</li>

@@ -16,7 +16,7 @@ export default function Page(){
             
                 
             </div>
-            <span className="font-[700]">Програма курсу:</span>
+            <span className="font-[700]">Програма курсу (12 занять):</span>
             <ul className="px-6 list-inside list-disc">
                 {programmArray.map((item,index)=>(
                     <li key={index}>{item}</li>
