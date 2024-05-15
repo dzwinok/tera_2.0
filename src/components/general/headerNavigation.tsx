@@ -45,7 +45,7 @@ export default function HeaderNavigation() {
 
 
     return (
-        <div id="navbar" className="w-full fixed flex flex-row justify-between duration-300 items-center bg-tera-green px-10 nav z-10 top-0">
+        <div id="navbar" className="w-full fixed flex flex-row justify-between duration-300 items-center bg-tera-green px-10 nav z-50 top-0">
             <div className="bg-white rounded-full">
                 <Link href="/" className="bg-white rounded-xl">
                     <Image src={logoPNG} className="h-[80px] w-[80px]  object-contain" alt="logoTeraConsult" />

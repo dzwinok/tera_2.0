@@ -8,7 +8,7 @@ import { BackgroundGradientAnimation } from "@/components/ui/background-gradient
 export default function CardStackDemo() {
     return (
     <BackgroundGradientAnimation>
-        <div className="absolute z-50 inset-0 flex items-center justify-center">
+        <div className="absolute z-40 inset-0 flex items-center justify-center">
             <div className="h-[58rem] flex items-center justify-center w-full">
                 <CardStack  items={CARDS} />
             </div>

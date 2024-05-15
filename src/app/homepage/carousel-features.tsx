@@ -25,7 +25,7 @@ export function CarouselFeatures() {
           nextArrow={() => <></>}
           prevArrow={() => <></>}
           navigation={({ setActiveIndex, activeIndex, length }) => (
-            <div className="absolute left-16 bottom-0 z-50 flex h-5 w-20 -translate-x-2/4 gap-2 md:left-2/4">
+            <div className="absolute left-16 bottom-0 z-40 flex h-5 w-20 -translate-x-2/4 gap-2 md:left-2/4">
               {new Array(length).fill("").map((_, i) => (
                 <span
                   key={i}
