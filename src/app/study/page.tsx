@@ -37,10 +37,18 @@ const dataArray = [
         nameOfCourse:"Microsoft Excel для професіоналів*",
         description: "Основи програмування на мові С  та об'єктно-орієнтоване програмування на мові С++. Курси програмістів.",
         link: null        
-    },*/ {
+    },*/   {
         nameOfCourse:"Кошторисна справа з використанням програми АВК-5",
         description: "Курс для тих, хто бажає навчитись складати кошториси в програмі АВК-5 і здобути спеціальність кошторисника",
         link: "/cources/avk"
+    }, {
+        nameOfCourse:"Комп'ютерна графіка (CorelDraw, Photoshop)",
+        description: "Вивчення програм CorelDraw та Photoshop.",
+        link: "/cources/comp_graph"
+    }, {
+        nameOfCourse:"Adobe Indesign",
+        description: "Курси InDesign у Львові. Верстка і макетування, додрукова підготовка в InDesign",
+        link: "/cources/indesign"
     }, {
         nameOfCourse:"Проектування в системі AutoCAD",
         description: "Проектування в AutoCad та тривимірне моделювання",
@@ -57,14 +65,6 @@ const dataArray = [
         nameOfCourse:"Програмний комплекс Ліра-САПР",
         description: "Навчання проектуванню в програмному комплексі ЛІРА.",
         link: "/cources/lira"
-    }, {
-        nameOfCourse:"Комп'ютерна графіка (CorelDraw, Photoshop)",
-        description: "Вивчення програм CorelDraw та Photoshop.",
-        link: "/cources/comp_graph"
-    }, {
-        nameOfCourse:"Adobe Indesign",
-        description: "Курси InDesign у Львові. Верстка і макетування, додрукова підготовка в InDesign",
-        link: "/cources/indesign"
     }, /*{
         nameOfCourse:"Adobe Illustrator",
         description: "Проектування в AutoCad та тривимірне моделювання.",

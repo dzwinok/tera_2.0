@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import HeaderNavigation from "@/components/general/headerNavigation";
+import Footer from "@/components/general/footer"
 
 
 
@@ -17,9 +18,10 @@ export default function RootLayout({
   return (
       <html lang="en">
       <body className={""}>
-      <main className="flex flex-col w-full">
+      <main className="flex flex-col w-full pt-[100px]">
         <HeaderNavigation/>
         {children}
+        <Footer/>
       </main>
       </body>
       </html>
