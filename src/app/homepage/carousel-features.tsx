@@ -10,7 +10,7 @@ export function CarouselFeatures() {
     <section className="px-8 pt-40 pb-20">
       <div className="flex mb-16 flex-col items-center">
         <Typography variant="h2" className="text-center mb-2" color="blue-gray">
-          What Students Say
+          Найпопулярніші курси
         </Typography>
         <Typography
           variant="lead"
@@ -49,10 +49,8 @@ export function CarouselFeatures() {
                   color="white"
                   className="mb-5 text-xl font-normal "
                 >
-                  Easy Shopping, Quick Delivery <br />
-                  No need to stress about shopping for books. Order online and
-                  have your textbooks and supplies delivered straight to your
-                  doorstep for free.
+                  3D Studio Max <br />
+                    Проектування 3D-моделей за допомогою програми 3D Studio Max та її візуалізація у V-Ray, Corona
                 </Typography>
                 <Typography
                   variant="small"
@@ -65,7 +63,7 @@ export function CarouselFeatures() {
                   </span>
                 </Typography>
               </div>
-              <div className="col-span-2 flex w-full shrink-0 md:!justify-end">
+              {/*<div className="col-span-2 flex w-full shrink-0 md:!justify-end">
                 <Image
                   width={256}
                   height={256}
@@ -73,7 +71,7 @@ export function CarouselFeatures() {
                   alt="testimonial image"
                   className="h-full w-2/4 object-contain md:!w-2/3"
                 />
-              </div>
+              </div>*/}
             </div>
           ))}
         </Carousel>

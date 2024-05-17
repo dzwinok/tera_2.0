@@ -9,7 +9,7 @@ export default function CardStackDemo() {
     return (
     <BackgroundGradientAnimation>
         <div className="absolute z-40 inset-0 flex items-center justify-center">
-            <div className="h-[58rem] flex items-center justify-center w-full">
+            <div className="flex items-center md:mr-40 md:mb-40">
                 <CardStack  items={CARDS} />
             </div>
         </div>
@@ -42,7 +42,7 @@ const CARDS = [
     {
         id: 0,
         name: "Наталія Скуратова",
-        designation: 'Студентка курсу "ArchiCad базовий"',
+        designation: 'Студентка курсу "Кошторисна справа з використанням програми АВК-5"',
         content: (
             <p>
                 Доброго дня! Проходила курси АВК (кошторисна справа), <Highlight>дуже задоволена.</Highlight> Загалом
@@ -53,12 +53,12 @@ const CARDS = [
     },
     {
         id: 1,
-        name: "Elon Musk",
-        designation: "Senior Shitposter",
+        name: "Марія Залужко",
+        designation: 'Студентка курсу "3D Studio Max"',
         content: (
             <p>
                 Курси дійсно дієві. Раніше проходила курс в іншій компанії, половину такого результату не отримала, 
-                як в " Тераконсалт ". За таку ціну дають <Highlight>максимально знань</Highlight>, дуже хороший 
+                як в "Тераконсалт". За таку ціну дають <Highlight>максимально знань</Highlight>, дуже хороший 
                 викладач. Та і великий плюс, що курс складається з +- 40 занять , тальки так можна дійсно щось 
                 осягнути в 3D max. Дякую)
             </p>
@@ -66,11 +66,11 @@ const CARDS = [
     },
     {
         id: 2,
-        name: "Tyler Durden",
-        designation: "Manager Project Mayhem",
+        name: "Анна Мамчин",
+        designation: 'Студентка курсу "Комп\'ютерна графіка"',
         content: (
             <p>
-                Довго обирала де б хотіла проходити навчання, обрала Teraconsult. <Highlight>Із задоволення почала і 
+                Довго обирала де б хотіла проходити навчання, обрала Teraconsult. <Highlight>Із задоволенням почала і 
                 закінчила курс.</Highlight> Викладачі кваліфіковані, з пояснень все ставало зрозумілим з першого разу. 
                 Якщо буде необхідність ще чомусь навчитись, не буду вже нічого шукати, <Highlight>одразу в 
                 Teraconsult:)</Highlight> тут Вас навчать! Рекомендую
@@ -79,20 +79,20 @@ const CARDS = [
     },
     {
         id: 3,
-        name: "Tyler Durden",
-        designation: "Manager Project Mayhem",
+        name: "Андріан Кулиняк",
+        designation: 'Студент курсу "3D Studio Max"',
         content: (
             <p>
-                Дуже класні курси 3d максу, <Highlight>отримала дуже хорошу базу</Highlight> , навчалась в Варшаві на 
+                Дуже класні курси 3d максу, <Highlight>отримав дуже хорошу базу</Highlight> , навчався у Варшаві на 
                 парах з 3d максу, вони не дали навіть 10 частини того, що в Тереконсалт. <Highlight>За 1 місяць
-                </Highlight>  роботи на фрілансі 3d візуалізатором <Highlight>відбила ціну цілого курсу.</Highlight>
+                </Highlight>  роботи на фрілансі 3d візуалізатором <Highlight>відбив ціну цілого курсу.</Highlight>
             </p>
         ),
     },
     {
         id: 4,
-        name: "Tyler Durden",
-        designation: "Manager Project Mayhem",
+        name: "Ірина Ковальчук",
+        designation: 'Студентка курсу "Adobe Indesign"',
         content: (
             <p>
                 Проходила індивідуальні заняття по курсу InDesign. Прийшла, практично, з нульовим уявленням про 

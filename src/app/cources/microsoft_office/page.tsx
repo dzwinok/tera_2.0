@@ -1,4 +1,7 @@
+"use client"
 import Discounts from "@/components/general/discounts"
+import Table from "@/components/general/table"
+import Popup from "@/components/general/popup"
 
 export default function Page(){
 
@@ -22,7 +25,8 @@ export default function Page(){
                     <li key={index}>{item}</li>
                 ))}
             </ul>
-            
+            <Table/>
+            <Popup />
             <Discounts/>
         </div>
     )

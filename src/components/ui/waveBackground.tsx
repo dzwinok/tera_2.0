@@ -2,6 +2,7 @@
 import { cn } from "@/lib/utils";
 import React, { useEffect, useRef } from "react";
 import { createNoise3D } from "simplex-noise";
+import { Button, Typography, Card } from "@material-tailwind/react";
 
 export const WavyBackground = ({
   children,

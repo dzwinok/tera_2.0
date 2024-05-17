@@ -1,6 +1,7 @@
 import { BackgroundGradient } from "@/components/ui/bg-gradient";
 import { WavyBackground } from "@/components/ui/waveBackground";
 import { Card,CardDescription,CardFooter,CardHeader } from "@/components/ui/card";
+import {Typography} from "@material-tailwind/react";
 
 
 export default function Home() {

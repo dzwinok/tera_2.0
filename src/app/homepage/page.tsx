@@ -23,11 +23,12 @@ const roboto = Roboto({
 export default function Campaign() {
   return (
     <div className={roboto.className}>
-      <WavyBackground className="flex justify-center items-center pb-40">
+      {/*<WavyBackground className="flex justify-center items-center pb-40">*/}
           {/*<div>*/}
-            <p className="tracking-widest text-9xl text-white font-bold">
+            {/*<p className="tracking-widest text-9xl text-white font-bold">
                 Teraconsult
-            </p>
+            </p>*/}
+          
             {/*<p className="text-2xl text-white">*/}
             {/*    Teraconsult є однією із провідних кантор Львова та Києва.<br>*/}
             {/*    Обери курс сьогодні та здобудь знання уже завтра.*/}
@@ -74,7 +75,7 @@ export default function Campaign() {
     {/*          ОБРАТИ КУРС*/}
     {/*        </Button>*/}
     {/*      </div>*/}
-      </WavyBackground>
+      {/*</WavyBackground>*/}
       <Hero />
       <OnlineCourse />
       <WhyChooseUs />
