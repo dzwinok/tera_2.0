@@ -14,20 +14,20 @@ import FeatureCard from "@/components/homepage/feature-card";
 const FEATURES = [
   {
     icon: InboxIcon,
-    title: "Hands-On Projects",
+    title: "Фокус на практиці",
     description:
-      "Apply your knowledge to real-world projects, building a robust portfolio.",
+      "Викладач дає зворотний зв'язок по кожному вашому кроку",
   },
   {
     icon: AcademicCapIcon,
-    title: "Career Opportunities",
+    title: "Кар'єрний зріст",
     description:
-      "React developers are in high demand and this course is designed for you!",
+      "Після закінчення курсу Ви зможете знайти добре оплачувану роботу ",
   },
   {
     icon: CheckBadgeIcon,
-    title: "Flexible Learning",
-    description: "Access course materials whenever it suits your schedule.",
+    title: "Гнучкість навчання",
+    description: "Можливість узгодити розклад з викладачем та займатись індивідуально",
   },
 ];
 
@@ -44,17 +44,15 @@ export function OnlineCourse() {
             alt="online course"
           />
         </div>
-        <div className="col-span-2 lg:pl-24">
-          <Typography variant="h2" color="blue-gray" className="mb-4">
-            Online Course
+        <div className="col-span-2 text-tera-green lg:pl-24">
+          <Typography variant="h2" color="tera-green" className="mb-4">
+            Про Teraconsult
           </Typography>
           <Typography
             variant="lead"
             className="mb-5 max-w-lg px-4 text-left text-lg !text-gray-500 lg:px-0  "
           >
-            In this comprehensive React Course, you&apos;ll delve into the world
-            of React, from its fundamentals to advanced techniques. Our expert
-            instructors will guide you through every step.
+            Окрім навчальних послуг компанія Teraconsult зарекомендувала себе в якості досвідченого системного інтегратора, надійного партнера і постачальника. Надаючи якісні послуги та рішення, ми сприяємо розвитку та зміцненню української економіки та держави. Бути краще, ніж учора та розвивати бізнес наших замовників – це наш підхід до роботи
           </Typography>
 
           <div className="col-span-2 grid grid-cols-1 gap-10 sm:grid-cols-3 ">

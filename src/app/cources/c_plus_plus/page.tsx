@@ -20,7 +20,11 @@ export default function Page(){
             <span className="font-[700]">Програма курсу "Основи програмування на мові С" (30 занять):</span>
             <ul className="px-6 list-inside list-disc">
                 {programmArray.map((item,index)=>(
-                    <li key={index}>{item}</li>
+                    <li className="flex items-center space-x-3 rtl:space-x-reverse" key={index}>{item}
+                        <svg className="ml-2 flex shrink-0 w-3.5 h-3.5 text-green-500 dark:text-green-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 12">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5.917 5.724 10.5 15 1.5"/>
+                        </svg>
+                    </li>
                 ))}
             </ul>
             <h1 className="font-bold text-2xl text-tera-green">Об'єктно-орієнтоване програмування на мові С++</h1>
@@ -29,7 +33,11 @@ export default function Page(){
             <span className="font-[700]">Програма курсу "Об'єктно-орієнтоване програмування на мові С++" (35 занять):</span>
             <ul className="px-6 list-inside list-disc">
                 {secondProgrammArray.map((item,index)=>(
-                    <li key={index}>{item}</li>
+                    <li className="flex items-center space-x-3 rtl:space-x-reverse" key={index}>{item}
+                        <svg className="ml-2 flex shrink-0 w-3.5 h-3.5 text-green-500 dark:text-green-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 12">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5.917 5.724 10.5 15 1.5"/>
+                        </svg>
+                    </li>
                 ))}
             </ul>
             <p>Програма курсу включає велику кількість практичних занять, що допомагають закріпити отримані теоретичні 

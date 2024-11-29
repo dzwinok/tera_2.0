@@ -139,9 +139,19 @@ const NewsletterModal: React.FC<NewsletterModalProps> = ({
                         className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                         required
                     >
-                        <option value="daily">Універсальний</option>
                         <option value="weekly">Microsoft Office</option>
+                        <option value="daily">Універсальний</option>
                         <option value="monthly">Windows. Базовий</option>
+                        <option value="monthly">Кошторисна справа з використанням програми АВК-5</option>
+                        <option value="monthly">Комп'ютерна графіка</option>
+                        <option value="monthly">Adobe Indesign</option>
+                        <option value="monthly">Проектування в системі AutoCAD</option>
+                        <option value="monthly">ArchiCAD базовий</option>
+                        <option value="monthly">Програмний комплекс Ліра-САПР</option>
+                        <option value="monthly">3D Studio Max</option>
+                        <option value="monthly">Основи програмування на мовах С/С++</option>
+                        <option value="monthly">Програмування в 1С (BAS)</option>
+                        
                     </select>
                 </div>
                 <div className="form-row">

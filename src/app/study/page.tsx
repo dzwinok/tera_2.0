@@ -82,7 +82,7 @@ const dataArray = [
         description: "Вивчення програм пакету Microsoft Office: Word, Excel, PowerPoint.",
         link: null
     },*/ {
-        nameOfCourse:"Програмування в 1С (BAS) 8*",
+        nameOfCourse:"Програмування в 1С (BAS)",
         description: "Навчальні курси програмування в програмному середовищі 1С (BAS)",
         link: "/cources/1-c"
     }

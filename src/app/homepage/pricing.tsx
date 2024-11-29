@@ -5,10 +5,10 @@ import { CheckIcon } from "@heroicons/react/24/outline";
 
 
 const PRICING_OPTIONS = [
-  "25 Classes",
-  "200 Learning hours  ",
-  "Expert-led instruction",
-  "Certificate of completion",
+  "20 занять",
+  "40 академічних годин",
+  "Доступ до платної версії",
+  "Сертифікат про завершення курсу",
 ];
 
 export function Pricing() {
@@ -17,17 +17,16 @@ export function Pricing() {
       <section className="container mx-auto px-10">
         <div className="grid place-items-center pb-20 text-center">
           <Typography variant="h2" color="blue-gray">
-            Best no-tricks pricing
+            Пропозиція місяця
           </Typography>
           <Typography variant="lead" className="mt-2 !text-gray-500 lg:w-5/12">
-            If you are not satisfied, contact us within the first 30 days and we
-            will send you a full refund.
+            Встигни скористатись акційною пропозицією до кінця травня та отримай кваліфікований курс для твого фаху
           </Typography>
         </div>
         <Card className="px-6 pb-5">
           <CardBody>
             <Typography variant="h3" color="blue-gray">
-              React Course Membership
+              Курс "ArchiCad базовий"
             </Typography>
             <div className="grid grid-cols-1 items-center gap-20 lg:grid-cols-2">
               <div>
@@ -35,12 +34,11 @@ export function Pricing() {
                   variant="paragraph"
                   className="mb-10 mt-2 w-full font-normal !text-gray-500"
                 >
-                  Our Course Package offers full access to the React Course,
-                  including all course materials, assignments, and projects.
+                  Вивчи основи проектування в системі ArchiCad та зроби свій перший готовий архітектурний проект разом з нами!
                 </Typography>
                 <div className="flex flex-wrap items-center gap-x-20 gap-y-6">
                   <Typography variant="h6" color="blue-gray">
-                    What is included
+                    Курс включає:
                   </Typography>
                   <hr className="w-72 bg-gray-500" />
                 </div>
@@ -63,20 +61,20 @@ export function Pricing() {
                 </div>
               </div>
               <div className="grid place-items-center lg:justify-end">
-                <Typography variant="h6" color="blue-gray">
-                  Pay once, own it forever
+                <Typography variant="h1" color="blue-gray" className="line-through text-red-300">
+                  10 000 грн
                 </Typography>
-                <Typography variant="h1" color="blue-gray">
-                  $399
+                <Typography variant="h1" color="blue-gray" className="text-2xl">
+                  8 500 грн
                 </Typography>
                 <Button color="gray" className="my-3">
-                  get access
+                  Старт 3 червня
                 </Button>
                 <Typography
                   variant="small"
                   className="font-normal !text-gray-500"
                 >
-                  Get a free sample (20MB)
+                  
                 </Typography>
               </div>
             </div>
