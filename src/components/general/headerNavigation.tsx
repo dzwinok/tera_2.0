@@ -42,7 +42,7 @@ export default function HeaderNavigation() {
         }
         prevScrollpos = currentScrollPos;
     }
-
+    
 
     return (
         <div id="navbar" className="w-full fixed flex flex-row justify-between duration-300 items-center bg-tera-green px-10 nav z-50 top-0">
@@ -52,12 +52,12 @@ export default function HeaderNavigation() {
                 </Link>
             </div>
             <div className="h-[100px] bg-tera-green flex items-center flex-1 justify-center ">
-                <div className="hidden w-1/2 md:flex justify-center">{
+                <div className="hidden w-1/2 md:flex justify-center h-full ">{
                     navigationDataArray.map((item, index) => (
                         <HoverCard className="nav-links" key={`${item.navigationName}-${index}`} openDelay={100} closeDelay={0}>
-                            <div className="group w-full text-center">
+                            <div className="group flex items-center w-full h-full text-center self-center hover:bg-tera-header">
                                 <HoverCardTrigger asChild>
-                                    <Link href={item.link ? item.link :"/"} className="bg-tera-green text-white w-full group-hover:bg-green-500 px-4 py-2 group-hover:text-black group-hover:border group-hover:border-black group-hover:rounded">{item.navigationName} </Link>
+                                    <Link href={item.link ? item.link :"/"} className="text-white w-full px-4 py-2 ">{item.navigationName} </Link>
                                 </HoverCardTrigger>
                                 {item.navigationItems && <HoverCardContent avoidCollisions={false} className="bg-green-500 group-hover:bg-green-500 flex flex-col p-0">
                                     {item.navigationItems.map((item, index) => ( <div key={`${item}-${index}`} className="text-black font-[600] hover:rounded-md text-[13px] hover:bg-green-700 py-[6px] px-2  ">{item}</div> ))}
@@ -85,6 +85,11 @@ export default function HeaderNavigation() {
                     </ul>
                 )}
             </div>
+            <div className="flex-2">
+                <button className="bg-black rounded-xl px-5 py-2.5 text-white hover:rounded-xl hover:border hover:border-white">LogIn</button>
+            </div>
+            
+            
         </div>
     )
 }

@@ -22,6 +22,7 @@ const config = {
         "tera-green": "#045C35",
         "tera-light-green": "#01673a",
         "tera-dark-green": "#074f2f",
+        "tera-header": "#00351d",
         "tera-white": "#fff6eb",
         "tera-dark-gray": "#8a8a8a",
         border: "hsl(var(--border))",
