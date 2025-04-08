@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useFormState, version } from "react";
+import { useActionState } from "react";
 import { registerUserAction } from "@/data/actions/auth-actions";
 
 import {
@@ -15,14 +15,16 @@ import {
 
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
+import { ZodErrors } from "@/components/custom/ZodErrors";
 
 const INITIAL_STATE = {
-    data: "You`re in!",
+    data: null,
+    zodErrors: null,
+    message: null
 };
 
 export function SignupForm() {
-    console.log("## will render on client ##", version);
-    const [formState, formAction] = useFormState(registerUserAction, INITIAL_STATE);
+    const [formState, formAction] = useActionState(registerUserAction, INITIAL_STATE);
 
     console.log("## will render on client ##");
     console.log(formState);
@@ -47,6 +49,7 @@ export function SignupForm() {
                                 type="text"
                                 placeholder="username"
                             />
+                            <ZodErrors error={formState?.zodErrors?.username} />
                         </div>
                         <div className="space-y-2">
                             <Label htmlFor="email">Email</Label>
@@ -56,6 +59,7 @@ export function SignupForm() {
                                 type="email"
                                 placeholder="name@example.com"
                             />
+                            <ZodErrors error={formState?.zodErrors?.email} />
                         </div>
 
                         <div className="space-y-2">
@@ -66,6 +70,7 @@ export function SignupForm() {
                                 type="password"
                                 placeholder="password"
                             />
+                            <ZodErrors error={formState?.zodErrors?.password} />
                         </div>
                     </CardContent>
                     <CardFooter className="flex flex-col">

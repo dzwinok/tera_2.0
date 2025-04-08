@@ -6,7 +6,7 @@ import { WavyBackground } from "@/components/ui/waveBackground";
 function Hero() {
   return (
     <div className="relative min-h-screen w-full ">
-      <WavyBackground className="flex justify-center items-center pb-40">
+      {/*<WavyBackground className="flex justify-center items-center pb-40">*/}
 
       {/*<div className="absolute inset-0 h-full w-full bg-gray-900/60" />*/}
         <div className="grid min-h-screen px-8">
@@ -36,7 +36,7 @@ function Hero() {
             </div>
           </div>
         </div>
-      </WavyBackground>
+      {/*</WavyBackground>*/}
     </div>
   );
 }
