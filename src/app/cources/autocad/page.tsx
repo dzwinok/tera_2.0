@@ -1,5 +1,6 @@
 import Discounts from "@/components/general/discounts"
 
+
 export default function Page(){
 
 
@@ -29,7 +30,7 @@ export default function Page(){
                 <p>Основною умовою навчання на даному курсі є попередній досвід роботи з системою <b>AutoCAD</b> і орієнтація на більш детальне ознайомлення з можливостями застосування технології тривимірного моделювання для побудови 3D моделі і створення на її основі двовимірних креслень.</p>
 
             </div>
-            <span className="font-[700]">Програма курсу AutoCAD: 3D-моделювання (20 занять):</span>
+            <span className="font-[700]">Програма курсу "AutoCAD: 3D-моделювання" (20 занять):</span>
             <ul className="px-6 list-inside list-disc">
                 {secondProgrammArray.map((item,index)=>(
                     <li className="flex items-center space-x-3 rtl:space-x-reverse" key={index}>{item}
@@ -39,6 +40,12 @@ export default function Page(){
                     </li>
                 ))}
             </ul>
+            <div className="flex justify-center items-center">
+            <button
+                className="bg-tera-green w-1/4 hover:bg-tera-dark-green text-white font-bold py-4 px-4 border border-blue-700 rounded">
+                Зареєструватись на курс
+            </button>
+            </div>
             <Discounts/>
         </div>
     )

@@ -1,5 +1,16 @@
 "use server";
 import { z } from "zod";
+import { cookies } from "next/headers";
+import { redirect } from "next/navigation";
+import { registerUserService } from "@/data/services/auth-service";
+
+const config = {
+    maxAge: 60 * 60 * 24 * 7, // 1 week
+    path: "/",
+    domain: process.env.HOST ?? "localhost",
+    httpOnly: true,
+    secure: process.env.NODE_ENV === "production",
+};
 
 const schemaRegister = z.object({
     username: z.string().min(3).max(20, {
@@ -11,15 +22,22 @@ const schemaRegister = z.object({
     email: z.string().email({
         message: "Please enter a valid email address",
     }),
+    age: z.number().min(0).max(110, {
+        message: "You can`t be that old. Please enter your valid age",
+    }),
+    gender: z.string().min(2).max(15, {
+        message: "",
+    }),
 });
 
 export async function registerUserAction(prevState: any, formData: FormData) {
-    console.log("Hello From Register User Action");
 
     const validatedFields = schemaRegister.safeParse({
         username: formData.get("username"),
         password: formData.get("password"),
         email: formData.get("email"),
+        age: formData.get("age"),
+        gender: formData.get("gender")
     });
 
     if (!validatedFields.success) {
@@ -31,8 +49,32 @@ export async function registerUserAction(prevState: any, formData: FormData) {
         };
     }
 
-    return {
-        ...prevState,
-        data: "ok",
-    };
+    const responseData = await registerUserService(validatedFields.data);
+
+    if (!responseData) {
+        return {
+            ...prevState,
+            strapiErrors: null,
+            zodErrors: null,
+            message: "Ops! Something went wrong. Please try again.",
+        };
+    }
+
+    if (responseData.error) {
+        return {
+            ...prevState,
+            strapiErrors: responseData.error,
+            zodErrors: null,
+            message: "Failed to Register.",
+        };
+    }
+
+    //const cookieStore = await cookies();
+    //cookieStore.set("jwt", responseData.jwt, config);
+    //redirect("/homepage");
+
+    console.log("#############");
+    console.log("User Registered Successfully", responseData.jwt);
+    console.log("#############");
+ 
 }

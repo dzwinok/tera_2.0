@@ -43,7 +43,7 @@ const dataArray = [
         link: "/cources/avk"
     }, {
         nameOfCourse:"Комп'ютерна графіка (CorelDraw, Photoshop)",
-        description: "Вивчення програм CorelDraw та Photoshop.",
+        description: "Вивчення програм CorelDraw та Photoshop",
         link: "/cources/comp_graph"
     }, {
         nameOfCourse:"Adobe Indesign",
@@ -59,11 +59,11 @@ const dataArray = [
         link: null
     },*/ {
         nameOfCourse:"ArchiCAD базовий",
-        description: "Основи проектування в системі ArchiCad.",
+        description: "Основи проектування в системі ArchiCad",
         link: "/cources/archicad"
     }, {
         nameOfCourse:"Програмний комплекс Ліра-САПР",
-        description: "Навчання проектуванню в програмному комплексі ЛІРА.",
+        description: "Навчання проектуванню в програмному комплексі ЛІРА",
         link: "/cources/lira"
     }, /*{
         nameOfCourse:"Adobe Illustrator",

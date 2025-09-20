@@ -29,7 +29,7 @@ export default function Page(){
                     </svg>
                     </li>
                 ))}
-            </ul>
+            </ul>-
             <Table/>
             <Popup />
             <Discounts/>

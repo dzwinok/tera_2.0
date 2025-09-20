@@ -46,7 +46,9 @@ export function SigninForm() {
                         </div>
                     </CardContent>
                     <CardFooter className="flex flex-col">
-                        <button className="w-full">Sign In</button>
+                        <button  className=" bg-tera-green hover:bg-tera-dark-green text-white font-bold py-2 px-4 rounded-xl">
+                            Sign In
+                        </button>
                     </CardFooter>
                 </Card>
                 <div className="mt-4 text-center text-sm">

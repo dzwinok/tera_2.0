@@ -4,18 +4,19 @@ import Link from "next/link";
 import { useActionState } from "react";
 import { registerUserAction } from "@/data/actions/auth-actions";
 
-import {
-    CardTitle,
-    CardDescription,
-    CardHeader,
-    CardContent,
-    CardFooter,
-    Card,
-} from "@/components/ui/card";
+    import {
+        CardTitle,
+        CardDescription,
+        CardHeader,
+        CardContent,
+        CardFooter,
+        Card,
+    } from "@/components/ui/card";
 
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 import { ZodErrors } from "@/components/custom/ZodErrors";
+import { StrapiErrors } from "@/components/custom/StrapiErrors";
 
 const INITIAL_STATE = {
     data: null,
@@ -51,6 +52,28 @@ export function SignupForm() {
                             />
                             <ZodErrors error={formState?.zodErrors?.username} />
                         </div>
+                        
+                        <div className="space-y-2">
+                            <Label htmlFor="age">Your age</Label>
+                            <Input
+                                id="age"
+                                name="age"
+                                type="number"
+                                placeholder="age"
+                            />
+                            <ZodErrors error={formState?.zodErrors?.age} />
+                        </div>
+
+                        <div className="space-y-2">
+                            <Label htmlFor="gender">Gender</Label>
+                            <Input
+                                id="gender"
+                                name="gender"
+                                type="text"
+                                placeholder="male/female"
+                            />
+                            <ZodErrors error={formState?.zodErrors?.gender} />
+                        </div>
                         <div className="space-y-2">
                             <Label htmlFor="email">Email</Label>
                             <Input
@@ -72,9 +95,13 @@ export function SignupForm() {
                             />
                             <ZodErrors error={formState?.zodErrors?.password} />
                         </div>
+
                     </CardContent>
                     <CardFooter className="flex flex-col">
-                        <button type ="submit" className="w-full">Sign Up</button>
+                        <button type ="submit" className=" bg-tera-green hover:bg-tera-dark-green text-white font-bold py-2 px-4 rounded-xl">
+                            Sign Up
+                        </button>
+                        <StrapiErrors error={formState?.strapiErrors} />
                     </CardFooter>
                 </Card>
                 <div className="mt-4 text-center text-sm">

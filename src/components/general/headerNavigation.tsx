@@ -122,10 +122,10 @@ const navigationDataArray: INavigationData[] = [
         navigationItems: null,
         link: "/contacts"
     },
-    {
-        navigationName: "Компанія",
-        navigationItems: null,
-        link: "/homepage"
-    },
+    //{
+    //    navigationName: "Компанія",
+    //    navigationItems: null,
+    //    link: "/homepage"
+    //},
 
 ]

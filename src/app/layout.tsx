@@ -1,3 +1,4 @@
+ 
 import type { Metadata } from "next";
 import "./globals.css";
 import HeaderNavigation from "@/components/general/headerNavigation";
