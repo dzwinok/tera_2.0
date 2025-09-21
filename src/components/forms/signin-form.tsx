@@ -1,5 +1,4 @@
 "use client";
-
 import Link from "next/link";
 
 import {
@@ -14,19 +13,31 @@ import {
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 
+const styles = {
+    container: "w-full max-w-md",
+    header: "space-y-1",
+    title: "text-3xl font-bold",
+    content: "space-y-4",
+    fieldGroup: "space-y-2",
+    footer: "flex flex-col",
+    button: "w-full bg-tera-green hover:bg-tera-dark-green text-white font-bold py-2 px-4 rounded-xl",
+    prompt: "mt-4 text-center text-sm",
+    link: "underline ml-2",
+};
+
 export function SigninForm() {
     return (
-        <div className="w-full max-w-md">
+        <div className={styles.container}>
             <form>
                 <Card>
-                    <CardHeader className="space-y-1">
-                        <CardTitle className="text-3xl font-bold">Sign In</CardTitle>
+                    <CardHeader className={styles.header}>
+                        <CardTitle className={styles.title}>Sign In</CardTitle>
                         <CardDescription>
                             Enter your details to sign in to your account
                         </CardDescription>
                     </CardHeader>
-                    <CardContent className="space-y-4">
-                        <div className="space-y-2">
+                    <CardContent className={styles.content}>
+                        <div className={styles.fieldGroup}>
                             <Label htmlFor="email">Email</Label>
                             <Input
                                 id="identifier"
@@ -35,7 +46,7 @@ export function SigninForm() {
                                 placeholder="username or email"
                             />
                         </div>
-                        <div className="space-y-2">
+                        <div className={styles.fieldGroup}>
                             <Label htmlFor="password">Password</Label>
                             <Input
                                 id="password"
@@ -45,15 +56,13 @@ export function SigninForm() {
                             />
                         </div>
                     </CardContent>
-                    <CardFooter className="flex flex-col">
-                        <button  className=" bg-tera-green hover:bg-tera-dark-green text-white font-bold py-2 px-4 rounded-xl">
-                            Sign In
-                        </button>
+                    <CardFooter className={styles.footer}>
+                        <button className={styles.button}>Sign In</button>
                     </CardFooter>
                 </Card>
-                <div className="mt-4 text-center text-sm">
-                    Don't have an account?
-                    <Link className="underline ml-2" href="signUp">
+                <div className={styles.prompt}>
+                    Don&apos;t have an account?
+                    <Link className={styles.link} href="signUp">
                         Sign Up
                     </Link>
                 </div>

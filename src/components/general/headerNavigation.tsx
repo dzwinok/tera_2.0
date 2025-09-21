@@ -86,7 +86,7 @@ export default function HeaderNavigation() {
                 )}
             </div>
             <div className="flex-2">
-                <Link href="/signIn" className="bg-black rounded-xl px-5 py-2.5 text-white hover:rounded-xl hover:border hover:border-white">SignIn</Link>
+                <Link href="/signIn" className="bg-black rounded-xl px-5 py-2.5 text-white hover:rounded-xl hover:border hover:border-white">Sign In</Link>
             </div>
             
             
@@ -122,10 +122,10 @@ const navigationDataArray: INavigationData[] = [
         navigationItems: null,
         link: "/contacts"
     },
-    //{
-    //    navigationName: "Компанія",
-    //    navigationItems: null,
-    //    link: "/homepage"
-    //},
+    {
+        navigationName: "Компанія",
+        navigationItems: null,
+        link: "/homepage"
+    },
 
 ]
