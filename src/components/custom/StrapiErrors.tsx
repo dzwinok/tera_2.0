@@ -1,10 +1,17 @@
-interface StrapiErrorsProps {
-    message: string | null;
+type TStrapiError = {
+    status: number;
     name: string;
-    status: string | null;
+    message: string;
+    details?: Record<string, string[]>;
+};
+
+interface IStrapiErrorsProps {
+    error?: TStrapiError | null;
 }
 
-export function StrapiErrors( { error }: { readonly error: StrapiErrorsProps }) {
+export function StrapiErrors({ error }: IStrapiErrorsProps) {
     if (!error?.message) return null;
-    return <div className="text-pink-500 text-md italic py-2">{error.message}</div>;
+    return (
+        <div className="text-pink-500 text-md italic py-2">{error.message}</div>
+    );
 }

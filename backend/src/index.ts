@@ -36,7 +36,6 @@ export default {
         const {data} = event.params;
 
         // if no username provided, use email as username
-        console.log("EEEEEEEEEEEEEEEEEEEEEEEEEEEE");
         data.username = data.email;
         
       },

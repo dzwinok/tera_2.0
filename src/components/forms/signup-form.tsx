@@ -16,9 +16,11 @@ import {
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
+import { SubmitButton } from "@/components/custom/submit-button";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 
 import { ZodErrors } from "@/components/custom/ZodErrors";
+import { StrapiErrors } from "@/components/custom/StrapiErrors";
 
 const styles = {
     container: "w-full max-w-md",
@@ -134,7 +136,8 @@ export function SignupForm() {
                         </div>
                     </CardContent>
                     <CardFooter className={styles.footer}>
-                        <Button className={styles.button}>Sign Up</Button>
+                        <SubmitButton className="w-full" text="Sign Up" loadingText="Loading" />
+                        <StrapiErrors error={formState?.strapiErrors} />
                     </CardFooter>
                 </Card>
                 <div className={styles.prompt}>
