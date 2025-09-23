@@ -2,9 +2,21 @@ import { BackgroundGradient } from "@/components/ui/bg-gradient";
 import { WavyBackground } from "@/components/ui/waveBackground";
 import { Card,CardDescription,CardFooter,CardHeader } from "@/components/ui/card";
 import {Typography} from "@material-tailwind/react";
+async function getStrapiData(url: string) {
+    const baseUrl = "http://localhost:1337";
+    try {
+        const response = await fetch(baseUrl + url);
+        const data = await response.json();
+        return data;
+    } catch (error) {
+        console.error(error);
+    }
+}
 
+export default async function Home() {
+    const strapiData = await getStrapiData("/api/home-page");
 
-export default function Home() {
+    const { title, description } = strapiData.data;
   return (
     <main className="flex  flex-col items-center justify-between ">
         <WavyBackground className="flex justify-center items-center pb-40">

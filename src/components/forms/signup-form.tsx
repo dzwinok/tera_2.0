@@ -29,6 +29,7 @@ const styles = {
     footer: "flex flex-col",
     button: "w-full bg-tera-green hover:bg-tera-dark-green text-white font-bold py-2 px-4 rounded-xl",
     prompt: "mt-4 text-center text-sm",
+    rowInputs: "flex flex-row justify-between",
     link: "underline ml-2",
 };
 
@@ -59,29 +60,30 @@ export function SignupForm() {
                         </CardDescription>
                     </CardHeader>
                     <CardContent className={styles.content}>
-                        <div className={styles.fieldGroup}>
-                            <Label htmlFor="firstname">First name</Label>
-                            <Input
-                                id="firstname"
-                                name="firstname"
-                                type="text"
-                                placeholder="firstname"
-                                defaultValue={formState?.data?.firstname || ""}
-                            />
-                            <ZodErrors error={formState?.zodErrors?.firstname} />
-                        </div>
-                        <div className={styles.fieldGroup}>
-                            <Label htmlFor="lastname">Last name</Label>
-                            <Input
-                                id="lastname"
-                                name="lastname"
-                                type="text"
-                                placeholder="lastname"
-                                defaultValue={formState?.data?.lastname || ""}
-                            />
-                            <ZodErrors error={formState?.zodErrors?.lastname} />
-                        </div>
-
+                        <div className={styles.rowInputs}>
+                            <div className={styles.fieldGroup}>
+                                <Label htmlFor="firstname">First name</Label>
+                                <Input
+                                    id="firstname"
+                                    name="firstname"
+                                    type="text"
+                                    placeholder="firstname"
+                                    defaultValue={formState?.data?.firstname || ""}
+                                />
+                                <ZodErrors error={formState?.zodErrors?.firstname} />
+                            </div>
+                            <div className={styles.fieldGroup}>
+                                <Label htmlFor="lastname">Last name</Label>
+                                <Input
+                                    id="lastname"
+                                    name="lastname"
+                                    type="text"
+                                    placeholder="lastname"
+                                    defaultValue={formState?.data?.lastname || ""}
+                                />
+                                <ZodErrors error={formState?.zodErrors?.lastname} />
+                            </div>
+                        </div>                        
                         <div className={styles.fieldGroup}>
                             <Label htmlFor="gender">Gender</Label>
                             <Select id="gender" name="gender" >
@@ -96,8 +98,7 @@ export function SignupForm() {
                                 </SelectContent>
                             </Select >
                             <ZodErrors error={formState?.zodErrors?.gender} />
-                        </div>
-                        
+                        </div>                        
                         <div className={styles.fieldGroup}>
                             <Label htmlFor="birthdate">Date of birth</Label>
                             <Input
@@ -109,8 +110,6 @@ export function SignupForm() {
                             />
                             <ZodErrors error={formState?.zodErrors?.birthdate} />
                         </div>
-
-
                         <div className={styles.fieldGroup}>
                             <Label htmlFor="email">Email</Label>
                             <Input

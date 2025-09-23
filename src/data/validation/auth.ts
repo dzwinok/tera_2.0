@@ -27,11 +27,8 @@ export const SignupFormSchema = z.object({
     gender: z.string(),
     birthdate: z
         .coerce.date()
-        //.refine((d) => d >= new Date("1930-01-01") && d <= new Date("2012-01-01"), "You have to be at least 14"),
-        .max(new Date("2020-01-01"), {
-            message: "You can`t be that young to use our services",
-        }).min(new Date("1930-01-01"), {
-            message: "You can`t be that old. Please enter your valid age",})
+        // .max(new Date("2012-01-01"), "You have to be at least 14")  TODO: uncomment
+        .min(new Date("1930-01-01"), "Invalid age. Please enter your age")
 });
 
 export type SigninFormValues = z.infer<typeof SigninFormSchema>;

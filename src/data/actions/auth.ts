@@ -1,6 +1,9 @@
 "use server";
 
 import { z } from "zod";
+import { services } from "@/data/services";
+import { isAuthError } from "@/data/services/auth";
+
 import { SignupFormSchema, type FormState } from "@/data/validation/auth";
 
 export async function registerUserAction(
@@ -22,7 +25,7 @@ export async function registerUserAction(
 
     if (!validatedFields.success) {
         const flattenedErrors = validatedFields.error.flatten();
-        console.log("Validation failed:", flattenedErrors.fieldErrors)
+        console.log("Validation failed:", flattenedErrors.fieldErrors);
         return {
             success: false,
             message: "Validation failed",
@@ -35,10 +38,48 @@ export async function registerUserAction(
         };
     }
 
+    const responseData = await services.auth.registerUserService(
+        {
+            "username": validatedFields.data.email,
+            ...validatedFields.data
+        }
+    );
 
-    console.log("Validation successful:", validatedFields.data);
+    console.log("Hello From Register User Action2", {
+        "username": validatedFields.data.email,
+        ...validatedFields.data
+    });
+    if (!responseData) {
+        return {
+            success: false,
+            message: "Ops! Something went wrong. Please try again.",
+            strapiErrors: null,
+            zodErrors: null,
+            data: {
+                ...prevState.data,
+                ...fields,
+            },
+        };
+    }
+    console.log("Hello From Register User Action23", isAuthError(responseData));
 
-    // TODO: WE WILL ADD STRAPI LOGIC HERE LATER
+    // Check if responseData is an error response
+    if (isAuthError(responseData)) {
+        return {
+            success: false,
+            message: "Failed to Register.",
+            strapiErrors: responseData.error,
+            zodErrors: null,
+            data: {
+                ...prevState.data,
+                ...fields,
+            },
+        };
+    }
+
+    console.log("#############");
+    console.log("User Registered Successfully", responseData);
+    console.log("#############");
 
     return {
         success: true,
