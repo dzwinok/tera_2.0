@@ -10,6 +10,9 @@ import Image from "next/image";
 import logoPNG from "@/assets/images/logo.png";
 import { useEffect, useState } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
+import { services } from "@/data/services";
+import { LoggedInUser } from "@/components/custom/logged-in-user";
+
 export default function HeaderNavigation() {
 
     const [nav, setNav] = useState(false);
@@ -42,6 +45,7 @@ export default function HeaderNavigation() {
         }
         prevScrollpos = currentScrollPos;
     }
+
     
 
     return (
@@ -85,8 +89,14 @@ export default function HeaderNavigation() {
                     </ul>
                 )}
             </div>
+            
             <div className="flex-2">
+                {user.status ? (
+                    <LoggedInUser userData={user.data!} />
+                ) : (
                 <Link href="/signIn" className="bg-black rounded-xl px-5 py-2.5 text-white hover:rounded-xl hover:border hover:border-white">Sign In</Link>
+                    )}
+                
             </div>
             
             
@@ -94,13 +104,14 @@ export default function HeaderNavigation() {
     )
 }
 
-
+const user = await services.auth.getUserMeService();
+console.log(user, 'AAAAAAAAAAAAAAAAAAAAAAAA');
 
 const navigationDataArray: INavigationData[] = [
     {
         navigationName: "Головна",
         navigationItems: null,
-        link: "/"
+        link: "/homepage"
     },
     {
         navigationName: "Навчання",
@@ -122,10 +133,10 @@ const navigationDataArray: INavigationData[] = [
         navigationItems: null,
         link: "/contacts"
     },
-    {
-        navigationName: "Компанія",
-        navigationItems: null,
-        link: "/homepage"
-    },
+    //{
+    //    navigationName: "Компанія",
+    //    navigationItems: null,
+    //    link: "/homepage"
+    //},
 
 ]

@@ -50,8 +50,8 @@ export const WavyBackground = ({
   const init = () => {
     canvas = canvasRef.current;
     ctx = canvas.getContext("2d");
-    w = ctx.canvas.width = window.innerWidth;
-    h = ctx.canvas.height = window.innerHeight;
+    w = ctx.canvas.width = window.innerWidth; // w = ctx.canvas.width = window.innerWidth-15;
+    h = ctx.canvas.height = window.innerHeight*4/5;
     ctx.filter = `blur(${blur}px)`;
     nt = 0;
     window.onresize = function () {
@@ -106,14 +106,15 @@ export const WavyBackground = ({
         "h-screen flex flex-col items-center justify-center -z-10",
         containerClassName
       )}
-    >
+    >      
       <canvas
-        className="absolute inset-0 z-0"
-        ref={canvasRef}
-        id="canvas"
-      ></canvas>
+          className="absolute inset-0 z-0"
+          ref={canvasRef}
+          id="canvas">
+      </canvas>
       <div className={cn("relative z-10", className)} {...props}>
         {children}
+        
       </div>
     </div>
   );

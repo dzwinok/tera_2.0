@@ -22,15 +22,15 @@ function Hero() {
             <Typography
               variant="lead"
               color="white"
-              className="mt-6 mb-10 w-full md:max-w-full lg:max-w-3xl"
+              className=" w-full md:max-w-full lg:max-w-3xl"
             >
-              Простір для вивчення нової професії, <br/>зростання в кар’єрі або розвитку бізнесу.
+              Простір для вивчення нової професії,<br/>зростання в кар’єрі або розвитку бізнесу
             </Typography>
             <p className="tracking-widest text-9xl text-white font-bold">
               Teraconsult
             </p>
-            <div className="mt-12">
-              <Button href="/study" className="px-5 py-3" variant="gradient" color="white">
+            <div className="mt-10">
+              <Button href="/study" className="px-5 py-3 text-xl" variant="gradient" color="white">
                 ЗАПИСАТИСЬ НА КУРС
               </Button>
             </div>

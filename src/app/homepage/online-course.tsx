@@ -33,7 +33,7 @@ const FEATURES = [
 
 export function OnlineCourse() {
   return (
-    <section className="py-28 px-8">
+    <section className="px-8">
       <div className="container mx-auto grid grid-cols-1 place-items-center lg:grid-cols-3">
         <div className="col-span-1 rounded-xl lg:mb-0 mb-12">
           <Image
