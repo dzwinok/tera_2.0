@@ -13,9 +13,26 @@ import { FaBars, FaTimes } from "react-icons/fa";
 import { services } from "@/data/services";
 import { LoggedInUser } from "@/components/custom/logged-in-user";
 
-export default function HeaderNavigation() {
 
+
+export default function HeaderNavigation() {
     const [nav, setNav] = useState(false);
+    const [user, setUser] = useState(null); // 🧩 store user data here
+
+    // 🔹 Fetch user data once when component mounts
+    useEffect(() => {
+        const fetchUser = async () => {
+            try {
+                const response = await services.auth.getUserMeService();
+                setUser(response);
+            } catch (error) {
+                console.error("Error fetching user:", error);
+            }
+        };
+        fetchUser();
+    }, []);
+    
+    console.log(user, 'AAAAAAAAAAAAAAAAAAAAAAAA');
 
     const handleResize = () => {
         if (window.innerWidth >= 768) { // Assuming 768px is your md breakpoint
@@ -45,8 +62,6 @@ export default function HeaderNavigation() {
         }
         prevScrollpos = currentScrollPos;
     }
-
-    
 
     return (
         <div id="navbar" className="w-full fixed flex flex-row justify-between duration-300 items-center bg-tera-green px-10 nav z-50 top-0">
@@ -91,8 +106,8 @@ export default function HeaderNavigation() {
             </div>
             
             <div className="flex-2">
-                {user.status ? (
-                    <LoggedInUser userData={user.data!} />
+                {user?.success && user.data ? (
+                    <LoggedInUser userData={user.data} />
                 ) : (
                 <Link href="/signIn" className="bg-black rounded-xl px-5 py-2.5 text-white hover:rounded-xl hover:border hover:border-white">Sign In</Link>
                     )}
@@ -104,8 +119,6 @@ export default function HeaderNavigation() {
     )
 }
 
-const user = await services.auth.getUserMeService();
-console.log(user, 'AAAAAAAAAAAAAAAAAAAAAAAA');
 
 const navigationDataArray: INavigationData[] = [
     {

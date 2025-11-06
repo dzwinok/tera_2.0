@@ -2,40 +2,41 @@
 import Discounts from "@/components/general/discounts"
 import Table from "@/components/general/table"
 import Popup from "@/components/general/popup"
+import CourseProgram from "@/components/general/program"
+import Subscribe from "@/components/general/subscribe-course.tsx"
 
 export default function Page(){
 
+//TODO: styles
 
+    const micOfficeInfo = [
+        { label: "Плановий старт:", value: "10.02.2026" },
+        { label: "Тривалість навчання:", value: "3 місяці" },
+        { label: "Кількість занять:", value: "12 занять" },
+    ];
 
     return(
-        <div className="w-full flex  flex-col px-[20%] space-y-4">
-            <div className="space-y-4">
-                <h2 className="text-tera-green text-[52px] font-[600] py-5">Microsoft Office</h2>
+        <div className="w-full flex flex-col ">
+            <div className="space-y-4 pb-4 px-[20%]">
+                <h2 className="text-tera-green text-[62px] font-[600] py-5">Microsoft Office</h2>
                 <p>Орієнтований на слухачів, що вже мають навички роботи з ОС Windows і бажають навчитись працювати з програмами пакету <b>Microsoft Office: Word, Excel, PowerPoint.</b></p>
                 <p><b>MS Word</b> - це найпопулярніший текстовий редактор. За допомогою цього редактора користувачі мають змогу повноцінно працювати з текстом, редагувати його, додавати таблиці, графіки, діаграми, малюнки, фотографії і багато іншого.</p>
                 <p><b>MS Excel</b> - це табличний редактор, без якого важко уявити повноцінну роботу в офісі. Excel працює з числами і формулами, допомагає систематизувати дані, створювати таблиці, графіки, діаграми, сортувати та фільтрувати дані і багато іншого.</p>
                 <p><b>MS PowerPoint</b> - найпопулярніша програма для створення презентацій. Цей редактор дає можливість: самостійно створювати найрізноманітніші презентації і редагувати вже створені, використовувати у презентаціях складну графіку, зображення, анімацію тощо, зручно керувати презентацією і її етапами і багато інших можливостей</p>
                 <p>Після закінчення навчання, наші слухачі легко виконують прості функції вдома й складні офісні операції. А саме: повноцінну роботу з текстовим та табличним редакторами, оформлення документів, зведення даних для реєстру, підготовка презентацій тощо.</p>
-            
-                
             </div>
-            <span className="font-[700]">Програма курсу (12 занять):</span>
-            <ul className="space-y-4 text-left text-gray-500 dark:text-gray-400">
-                {programmArray.map((item,index)=>(
-                    /*<li key={index}>{item}</li>*/
-                    <li className="flex items-center space-x-3 rtl:space-x-reverse" key={index}>{item}
-                    <svg className="ml-2 flex shrink-0 w-3.5 h-3.5 text-green-500 dark:text-green-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 12">
-                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5.917 5.724 10.5 15 1.5"/>
-                    </svg>
-                    </li>
-                ))}
-            </ul>
-            <Table/>
-            <Popup />
-            <Discounts/>
+
+            <CourseProgram programmArray={programmArray} />
+            <div className="px-[20%]">
+                <Subscribe title="Microsoft Office" price="8 500" courseInfo={micOfficeInfo}/>
+                <Popup/>
+                <Discounts/>
+            </div>
         </div>
     )
 }
+
+
 
 
 const programmArray = [
