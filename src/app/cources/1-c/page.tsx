@@ -1,30 +1,34 @@
 import Discounts from "@/components/general/discounts"
+import CourseProgram from "@/components/general/program"
+import Subscribe from "@/components/general/subscribe-course"
+
+const styles = {
+    main: "w-full px-[20%] flex flex-col",
+    text: "space-y-4 pb-4",
+    header: "text-tera-green text-[62px] font-[600] py-5",
+};
+
 
 export default function Page(){
 
-
+    const basInfo = [
+        { label: "Плановий старт:", value: "02.02.2026" },
+        { label: "Тривалість навчання:", value: "~2 місяці" },
+        { label: "Кількість занять:", value: "16 занять" },
+        { label: "Форма навчання:", value: "індивідуальне" }
+    ];
 
     return(
-        <div className="w-full flex  flex-col px-[20%] space-y-4">
-            <div className="space-y-4">
-                <h2 className="text-tera-green text-[52px] font-[600] ">Програмування в 1С (BAS)</h2>
+        <div className={styles.main}>
+            <div className={styles.text}>
+                <h2 className={styles.header}>Програмування в 1С (BAS)</h2>
                 <p>Оскільки сама програма для автоматизованого обліку 1С найбільш використовувана на підприємствах України і не тільки, а конфігурація цієї програми має бути налаштована із врахуванням конкретних потреб підприємства, то виникає потреба у кваліфікованому програмістові програми 1С, який би зміг адаптувати програму 1С під особливості діяльності підприємства і ведення обліку на ньому. Будучи програмістом 1С, Ви легко зможете знайти високооплачувану роботу.</p>
                 <p><b>"Тераконсалт"</b> пропонує навчання на курсі <b>"Програмування 1С"</b>, в програмі якого розглядаються механізми для вирішення практичних завдань конфігурації програми 1С різної складності. Програма курсу включає в себе вивчення базових понять, а також конкретних прикладів, котрі дозволять засвоїти основні принципи і правила у роботі над конфігурацією 1С.</p>
                 <p>Є можливість обирати версію програми 1С 7.7 або 8</p>
-
             </div>
-            <span className="font-[700]">Програма курсу (16 занять):</span>
-            <ul className="px-6 list-inside list-disc">
-                {programmArray.map((item,index)=>(
-                    /*<li key={index}>{item}</li>*/
-                    <li className="flex items-center space-x-3 rtl:space-x-reverse" key={index}>{item}
-                        <svg className="ml-2 flex shrink-0 w-3.5 h-3.5 text-green-500 dark:text-green-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 12">
-                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5.917 5.724 10.5 15 1.5"/>
-                        </svg>
-                    </li>
-                ))}
-            </ul>
-            <p><b>Форма навчання: індивідуальні заняття.</b></p>
+            <CourseProgram programmArray={programmArray} />
+            <Subscribe title="Програмування в 1С" price="8 500" courseInfo={basInfo}/>
+            
         </div>
     )
 }

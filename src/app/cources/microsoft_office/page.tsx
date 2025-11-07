@@ -3,11 +3,15 @@ import Discounts from "@/components/general/discounts"
 import Table from "@/components/general/table"
 import Popup from "@/components/general/popup"
 import CourseProgram from "@/components/general/program"
-import Subscribe from "@/components/general/subscribe-course.tsx"
+import Subscribe from "@/components/general/subscribe-course"
+
+const styles = {
+    main: "w-full px-[20%] flex flex-col",
+    text: "space-y-4 pb-4",
+    header: "text-tera-green text-[62px] font-[600] py-5",
+};
 
 export default function Page(){
-
-//TODO: styles
 
     const micOfficeInfo = [
         { label: "Плановий старт:", value: "10.02.2026" },
@@ -16,9 +20,9 @@ export default function Page(){
     ];
 
     return(
-        <div className="w-full flex flex-col ">
-            <div className="space-y-4 pb-4 px-[20%]">
-                <h2 className="text-tera-green text-[62px] font-[600] py-5">Microsoft Office</h2>
+        <div className={styles.main}>
+            <div className={styles.text}>
+                <h2 className={styles.header}>Microsoft Office</h2>
                 <p>Орієнтований на слухачів, що вже мають навички роботи з ОС Windows і бажають навчитись працювати з програмами пакету <b>Microsoft Office: Word, Excel, PowerPoint.</b></p>
                 <p><b>MS Word</b> - це найпопулярніший текстовий редактор. За допомогою цього редактора користувачі мають змогу повноцінно працювати з текстом, редагувати його, додавати таблиці, графіки, діаграми, малюнки, фотографії і багато іншого.</p>
                 <p><b>MS Excel</b> - це табличний редактор, без якого важко уявити повноцінну роботу в офісі. Excel працює з числами і формулами, допомагає систематизувати дані, створювати таблиці, графіки, діаграми, сортувати та фільтрувати дані і багато іншого.</p>
@@ -27,11 +31,10 @@ export default function Page(){
             </div>
 
             <CourseProgram programmArray={programmArray} />
-            <div className="px-[20%]">
-                <Subscribe title="Microsoft Office" price="8 500" courseInfo={micOfficeInfo}/>
-                <Popup/>
-                <Discounts/>
-            </div>
+            <Subscribe title="Microsoft Office" price="8 500" courseInfo={micOfficeInfo}/>
+            <Popup/>
+            <Discounts/>
+            
         </div>
     )
 }

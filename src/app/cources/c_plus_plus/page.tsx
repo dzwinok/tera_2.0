@@ -1,15 +1,31 @@
 import Discounts from "@/components/general/discounts"
+import CourseProgram from "@/components/general/program"
+import Subscribe from "@/components/general/subscribe-course"
+
+const styles = {
+    main: "w-full px-[20%] flex flex-col",
+    text: "space-y-4 pb-4",
+    header: "text-tera-green text-[62px] font-[600] py-5",
+};
+
 
 export default function Page(){
 
-
+    const сInfo = [
+        { label: "Плановий старт:", value: "02.01.2026" },
+        { label: "Тривалість навчання:", value: "~5 місяців" },
+        { label: "Кількість занять:", value: "30 занять" },
+    ];
+    const сPlusPlusInfo = [
+        { label: "Плановий старт:", value: "14.01.2026" },
+        { label: "Тривалість навчання:", value: "~6 місяців" },
+        { label: "Кількість занять:", value: "35 занять" },
+    ];
 
     return(
-        <div className="w-full flex  flex-col px-[20%] space-y-4">
-
-            
-            <div className="space-y-4">
-                <h2 className="text-tera-green text-[52px] font-[600] ">Основи програмування <br></br> на мовах С / С++</h2>
+        <div className={styles.main}>
+            <div className={styles.text}>
+                <h2 className={styles.header}>Основи програмування <br></br> на мовах С / С++</h2>
                 <p><b>Мова програмування С</b> та її <b>розширення С++</b> на сьогодні є одними з найпопулярніших мов 
                     програмування. Їм надають перевагу програмісти у всьому світі при розробці складних проектів.</p>
                 <p><b>Навчальний центр "Тераконсалт"</b> пропонує курс <b>"Основи програмування на мовах С/С++"</b>.
@@ -17,32 +33,17 @@ export default function Page(){
                     навичок у сфері програмування.</p>
 
             </div>
-            <span className="font-[700]">Програма курсу "Основи програмування на мові С" (30 занять):</span>
-            <ul className="px-6 list-inside list-disc">
-                {programmArray.map((item,index)=>(
-                    <li className="flex items-center space-x-3 rtl:space-x-reverse" key={index}>{item}
-                        <svg className="ml-2 flex shrink-0 w-3.5 h-3.5 text-green-500 dark:text-green-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 12">
-                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5.917 5.724 10.5 15 1.5"/>
-                        </svg>
-                    </li>
-                ))}
-            </ul>
-            <h1 className="font-bold text-2xl text-tera-green">Об'єктно-орієнтоване програмування на мові С++</h1>
-            <p>Цей курс розрахований на тих, хто вже знає основи програмування.</p>
+            <CourseProgram title={"Програма курсу \"Основи програмування на мові С\":"} programmArray={programmArray} />
+            <Subscribe title="Основи програмування на мові С" price="10 000" courseInfo={сInfo}/>
 
-            <span className="font-[700]">Програма курсу "Об'єктно-орієнтоване програмування на мові С++" (35 занять):</span>
-            <ul className="px-6 list-inside list-disc">
-                {secondProgrammArray.map((item,index)=>(
-                    <li className="flex items-center space-x-3 rtl:space-x-reverse" key={index}>{item}
-                        <svg className="ml-2 flex shrink-0 w-3.5 h-3.5 text-green-500 dark:text-green-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 12">
-                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5.917 5.724 10.5 15 1.5"/>
-                        </svg>
-                    </li>
-                ))}
-            </ul>
-            <p>Програма курсу включає велику кількість практичних занять, що допомагають закріпити отримані теоретичні 
-                знання на практиці. Такий навчальний підхід допомагає слухачам швидко досягнути професійного рівня у 
+            <CourseProgram title={"Програма курсу \"Об'єктно-орієнтоване програмування на мові С++\":"} programmArray={secondProgrammArray} />
+            <p>Програма курсу включає велику кількість практичних занять, що допомагають закріпити отримані теоретичні
+                знання на практиці. Такий навчальний підхід допомагає слухачам швидко досягнути професійного рівня у
                 роботі над різними проектами.</p>
+            <Subscribe title="Програмування на мові С++" price="10 500" courseInfo={сPlusPlusInfo}/>
+            
+            
+            
             <Discounts/>
         </div>
     )
@@ -71,8 +72,6 @@ const secondProgrammArray = [
     "Використання стандартних шаблонів класів бібліотеки STL",
     "Розробка Windows програм засобами С++ Builder та Visual Studio",
 ]
-
-
 
 
 

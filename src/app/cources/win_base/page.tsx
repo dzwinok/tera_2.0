@@ -1,13 +1,26 @@
 import Discounts from "@/components/general/discounts"
+import Popup from "@/components/general/popup"
+import CourseProgram from "@/components/general/program"
+import Subscribe from "@/components/general/subscribe-course"
+
+const styles = {
+    main: "w-full px-[20%] flex flex-col",
+    text: "space-y-4 pb-4",
+    header: "text-tera-green text-[62px] font-[600] py-5",
+};
 
 export default function Page(){
 
-
+    const windowsInfo = [
+        { label: "Плановий старт:", value: "15.01.2026" },
+        { label: "Тривалість навчання:", value: "4 місяці" },
+        { label: "Кількість занять:", value: "20 занять" },
+    ];
 
     return(
-        <div className="w-full flex  flex-col px-[20%] space-y-4">
-            <div className="space-y-4">
-                <h2 className="text-tera-green text-[52px] font-[600] ">Windows. Базовий</h2>
+        <div className={styles.main}>
+            <div className={styles.text}>
+                <h2 className={styles.header}>Windows. Базовий</h2>
 
                 <p>Навчальний курс <b>"Базовий"</b> - це курс для тих, хто ніколи раніше не працював за комп'ютером і бажає
                     крок за кроком здобути стійкі навички роботи з ПК. Також цей курс буде корисним тим користувачам,
@@ -18,16 +31,10 @@ export default function Page(){
                     самостійної роботи.</p>
 
             </div>
-            <span className="font-[700]">Програма курсу (10 занять):</span>
-            <ul className="px-6 list-inside list-disc">
-                {programmArray.map((item,index)=>(
-                    <li className="flex items-center space-x-3 rtl:space-x-reverse" key={index}>{item}
-                        <svg className="ml-2 flex shrink-0 w-3.5 h-3.5 text-green-500 dark:text-green-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 12">
-                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5.917 5.724 10.5 15 1.5"/>
-                        </svg>
-                    </li>
-                ))}
-            </ul>
+            <Popup/>
+            <CourseProgram programmArray={programmArray} />
+            <Subscribe title="Windows Базовий" price="5 000" courseInfo={windowsInfo}/>            
+            
             <Discounts/>
         </div>
     )

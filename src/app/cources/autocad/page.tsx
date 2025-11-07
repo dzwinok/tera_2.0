@@ -1,51 +1,47 @@
 import Discounts from "@/components/general/discounts"
+import CourseProgram from "@/components/general/program"
+import Subscribe from "@/components/general/subscribe-course"
 
+const styles = {
+    main: "w-full px-[20%] flex flex-col",
+    text: "space-y-4 pb-4",
+    header: "text-tera-green text-[62px] font-[600] py-5",
+    level_text: "text-[28px] font-[500] text-gray-800",
+};
 
 export default function Page(){
 
-
+    const autocad2dInfo = [
+        { label: "Плановий старт:", value: "05.01.2026" },
+        { label: "Тривалість навчання:", value: "~2 місяці" },
+        { label: "Кількість занять:", value: "20 занять" },
+    ];
+    const autocad3dInfo = [
+        { label: "Плановий старт:", value: "27.01.2026" },
+        { label: "Тривалість навчання:", value: "~3 місяці" },
+        { label: "Кількість занять:", value: "20 занять" },
+    ];
 
     return(
-        <div className="w-full flex  flex-col px-[20%] space-y-4">
-            <div className="space-y-4">
-            <h2 className="text-tera-green text-[52px] font-[600] ">AutoCad</h2>
-                <h1 className="font-bold text-2xl">2D-моделювання</h1>
-            <p>Інтегрований графічний пакет програм <b>AutoCAD</b> є найбільш популярним на ринку програм автоматизованого проектування. AutoCAD є промисловим стандартом для випуску графічної частини конструкторської документації різноманітного призначення.</p>
+        <div className={styles.main}>
+            <div className={styles.text}>
+                <h2 className={styles.header}>Проєктування в AutoCad</h2>
+                <h1 className={styles.level_text}>2D-моделювання</h1>
+            <p>Інтегрований графічний пакет програм <b>AutoCAD</b> є найбільш популярним на ринку програм автоматизованого проєктування. AutoCAD є промисловим стандартом для випуску графічної частини конструкторської документації різноманітного призначення.</p>
             <p>Навчаючись на цьому курсі, слухачі отримають знання про можливості системи AutoCAD, ефективні способи і прийоми побудови двовимірної моделі реального об’єкта і створення на її основі креслення.</p>
-          
             </div>
-            <span className="font-[700]">Програма курсу AutoCAD: 2D-моделювання (20 занять):</span>
-            <ul className="px-6 list-inside list-disc">
-                {programmArray.map((item,index)=>(
-                    <li className="flex items-center space-x-3 rtl:space-x-reverse" key={index}>{item}
-                        <svg className="ml-2 flex shrink-0 w-3.5 h-3.5 text-green-500 dark:text-green-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 12">
-                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5.917 5.724 10.5 15 1.5"/>
-                        </svg>
-                    </li>
-                ))}
-            </ul>
+            <CourseProgram title={"Програма курсу AutoCAD: 2D-моделювання:"} programmArray={programmArray} />
+            <Subscribe title="AutoCAD: 2D-моделювання" price="8 000" courseInfo={autocad2dInfo}/>
+            
             <div className="space-y-4">
-                <h1 className="font-bold text-2xl">3D-моделювання</h1>
-                <p>Курс <b>"AutoCad. 3D-моделювання"</b> - це професійний курс призначений для вивчення можливостей тривимірного проектування, що дозволяє ефективно використовувати проектно-конструкторські роботи і надає можливість конструктору застосовувати природній принцип проектування виробу від просторової моделі до її двовимірного представлення у вигляді звичайного креслення.</p>
+                <h1 className={styles.level_text}>3D-моделювання</h1>
+                <p>Курс <b>"AutoCad. 3D-моделювання"</b> - це професійний курс призначений для вивчення можливостей тривимірного проєктування, що дозволяє ефективно використовувати проектно-конструкторські роботи і надає можливість конструктору застосовувати природній принцип проєктування виробу від просторової моделі до її двовимірного представлення у вигляді звичайного креслення.</p>
                 <p>Основною умовою навчання на даному курсі є попередній досвід роботи з системою <b>AutoCAD</b> і орієнтація на більш детальне ознайомлення з можливостями застосування технології тривимірного моделювання для побудови 3D моделі і створення на її основі двовимірних креслень.</p>
 
             </div>
-            <span className="font-[700]">Програма курсу "AutoCAD: 3D-моделювання" (20 занять):</span>
-            <ul className="px-6 list-inside list-disc">
-                {secondProgrammArray.map((item,index)=>(
-                    <li className="flex items-center space-x-3 rtl:space-x-reverse" key={index}>{item}
-                        <svg className="ml-2 flex shrink-0 w-3.5 h-3.5 text-green-500 dark:text-green-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 12">
-                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5.917 5.724 10.5 15 1.5"/>
-                        </svg>
-                    </li>
-                ))}
-            </ul>
-            <div className="flex justify-center items-center">
-            <button
-                className="bg-tera-green w-1/4 hover:bg-tera-dark-green text-white font-bold py-4 px-4 border border-blue-700 rounded">
-                Зареєструватись на курс
-            </button>
-            </div>
+            <CourseProgram title={"Програма курсу AutoCAD: 3D-моделювання:"} programmArray={secondProgrammArray} />
+            <Subscribe title="AutoCAD: 3D-моделювання" price="9 000" courseInfo={autocad3dInfo}/>
+
             <Discounts/>
         </div>
     )

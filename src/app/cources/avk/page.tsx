@@ -1,52 +1,42 @@
 import Discounts from "@/components/general/discounts"
+import Popup from "@/components/general/popup"
+import CourseProgram from "@/components/general/program"
+import Subscribe from "@/components/general/subscribe-course"
+
+const styles = {
+    main: "w-full px-[20%] flex flex-col",
+    text: "space-y-4 pb-4",
+    header: "text-tera-green leading-[68px] text-[62px] font-[600] py-5",
+    level_text: "text-[28px] font-[500] text-gray-800",
+};
 
 export default function Page(){
 
-
+    const avk5Info = [
+        { label: "Плановий старт:", value: "02.02.2026" },
+        { label: "Тривалість навчання:", value: "~4 місяці" },
+        { label: "Кількість занять:", value: "16 занять" },
+    ];
 
     return(
-        <div className="w-full flex  flex-col px-[20%] space-y-4">
-            <div className="space-y-4">
-                <h2 className="text-tera-green text-[52px] font-[600] ">Кошторисна справа з використанням програмного комплексу АВК-5</h2>
+        <div className={styles.main}>
+            <div className={styles.text}>
+                <h2 className={styles.header}>Кошторисна справа з використанням програмного комплексу АВК-5</h2>
                 <p><b>АВК-5</b> - це програма, що найчастіше використовується для автоматичного складання кошторисів. Популярність даної програми пояснюється не лише зручністю використання її інтерфейсу, а й функціональними можливостями, що допомагають фахівцям зі складання кошторисів оптимізувати фінансові і трудові ресурси і внормувати їх у відповідності до актуальних норм законодавства.</p>
                 <p><b>"Кошторисна справа з використанням програмного комплексу АВК-5"</b> - це спеціалізований курс для фахівців зі складання кошторисів, що бажають навчитись працювати з програмою АВК-5, а також для тих, хто бажає здобути спеціальність кошторисника.</p>
                 <p>Курси кошторисників в Навчальному центрі "Тераконсалт" орієнтовані на вивчення методології складання кошторисних планів та супровідної документації для об'єктів різних видів та складності будівництва. Цей курс містить два рівні вивчення: базовий та поглиблений.</p>
-                <p><b>Базовий рівень (20 занять).</b><br></br>
+                <Popup/>
+                <p><span className={styles.level_text}><b>Базовий рівень (10 занять)</b></span><br></br>
                     Складається з двох модулів: теоретичного та практичного - вивчаються складання кошторисів та основні навички роботи з програмою АВК-5. </p>
-                
             </div>
-            <span className="font-[700]">Програма теоретичного модуля (12 занять):</span>
-            <ul className="px-6 list-inside list-disc">
-                {programmArray.map((item,index)=>(
-                    <li className="flex items-center space-x-3 rtl:space-x-reverse" key={index}>{item}
-                        <svg className="ml-2 flex shrink-0 w-3.5 h-3.5 text-green-500 dark:text-green-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 12">
-                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5.917 5.724 10.5 15 1.5"/>
-                        </svg>
-                    </li>
-                ))}
-            </ul>
-            <span className="font-[700]">Програма практичного модуля (8 занять):</span>
-            <ul className="px-6 list-inside list-disc">
-                {secondProgrammArray.map((item,index)=>(
-                    <li className="flex items-center space-x-3 rtl:space-x-reverse" key={index}>{item}
-                        <svg className="ml-2 flex shrink-0 w-3.5 h-3.5 text-green-500 dark:text-green-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 12">
-                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5.917 5.724 10.5 15 1.5"/>
-                        </svg>
-                    </li>
-                ))}
-            </ul>
-            <p><b>Поглиблений рівень. Модуль "Спеціалізація". (6 занять)</b><br></br>
+
+            <CourseProgram title={"Програма теоретичного модуля (6 занять):"} programmArray={programmArray} />
+            <CourseProgram title={"Програма практичного модуля (4 заняття):"} programmArray={secondProgrammArray} />
+            <p><span className={styles.level_text}><b>Поглиблений рівень. Модуль "Спеціалізація" (6 занять)</b></span><br></br>
                 Має за мету навчити роботі з кошторисами складних об'єктів, оволодіти вмінням виконувати перевірку кошторисів підрядних та субпідрядних організацій, навчити професійно використовувати програму АВК-5 для складання кошторисів згідно із актуальними нормативами в Україні, тощо.</p>
-            <span className="font-[700]">Програма практичного модуля (8 занять):</span>
-            <ul className="px-6 list-inside list-disc">
-                {thirdProgrammArray.map((item,index)=>(
-                    <li className="flex items-center space-x-3 rtl:space-x-reverse" key={index}>{item}
-                        <svg className="ml-2 flex shrink-0 w-3.5 h-3.5 text-green-500 dark:text-green-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 12">
-                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5.917 5.724 10.5 15 1.5"/>
-                        </svg>
-                    </li>
-                ))}
-            </ul>
+            <CourseProgram title={"Програма поглибленого курсу включає:"} programmArray={thirdProgrammArray} />
+
+            <Subscribe title="Кошторисна справа" price="9 800" courseInfo={avk5Info}/>
         </div>
     )
 }

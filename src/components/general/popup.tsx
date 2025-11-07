@@ -1,3 +1,4 @@
+"use client"
 import { FaTimes } from "react-icons/fa";
 import React, { useState, useEffect, useRef } from "react";
 
@@ -114,7 +115,7 @@ const NewsletterModal: React.FC<NewsletterModalProps> = ({
             isOpen={isOpen}
             onClose={onClose}>
             <form onSubmit={handleSubmit}>
-                <h2 className="mb-2 text-gray-90 font-2xl"><b>Підписка на курс</b></h2>
+                <h2 className="mb-2 text-gray-90 font-2xl"><b>Реєстрація на курс</b></h2>
                 <div className="form-row">
                     <label htmlFor="email" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Email</label>
                     <input
@@ -145,7 +146,7 @@ const NewsletterModal: React.FC<NewsletterModalProps> = ({
                         <option value="monthly">Кошторисна справа з використанням програми АВК-5</option>
                         <option value="monthly">Комп'ютерна графіка</option>
                         <option value="monthly">Adobe Indesign</option>
-                        <option value="monthly">Проектування в системі AutoCAD</option>
+                        <option value="monthly">Проєктування в системі AutoCAD</option>
                         <option value="monthly">ArchiCAD базовий</option>
                         <option value="monthly">Програмний комплекс Ліра-САПР</option>
                         <option value="monthly">3D Studio Max</option>
@@ -183,7 +184,7 @@ const Popup = () => {
     return (
         <>
             <div style={{ display: "flex", gap: "1em" }} className="flex justify-center">
-                <button onClick={handleOpenNewsletterModal} className="block text-white bg-tera-green hover:bg-tera-dark-green focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-xl px-5 py-2.5 text-center">Записатись на курс</button>
+                <button onClick={handleOpenNewsletterModal} className="block text-white bg-tera-green hover:bg-tera-dark-green focus:ring-4 focus:outline-none focus:ring-tera-dark-green font-medium rounded-lg text-xl px-5 py-2.5 text-center">Записатись на курс</button>
             </div>
 
             {newsletterFormData && newsletterFormData.email && (

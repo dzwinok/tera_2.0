@@ -19,7 +19,7 @@ export default function Page(){
     )
 }
 
-// ПОМІНЯТИ ВСІ DESCRIPTIONS
+//TODO: ПОМІНЯТИ ВСІ DESCRIPTIONS
 const dataArray = [
     {
         nameOfCourse:"Windows. Базовий (ОС Windows, Інтернет)",
@@ -29,11 +29,7 @@ const dataArray = [
         nameOfCourse:"Microsoft Office (Word, Excel, PowerPoint) ",
         description: "Вивчення програм пакету Microsoft Office: Word, Excel, PowerPoint",
         link: "/cources/microsoft_office"
-    }, {
-        nameOfCourse:"Універсальний. (\"Windows. Базовий\" + \"Microsoft Office\")",
-        description: "Курс вивчення комп'ютера для початківців у Львові",
-        link: "/cources/universal"
-    }, /*{
+    },  /*{
         nameOfCourse:"Microsoft Excel для професіоналів*",
         description: "Основи програмування на мові С  та об'єктно-орієнтоване програмування на мові С++. Курси програмістів.",
         link: null        
@@ -50,8 +46,8 @@ const dataArray = [
         description: "Курси InDesign у Львові. Верстка і макетування, додрукова підготовка в InDesign",
         link: "/cources/indesign"
     }, {
-        nameOfCourse:"Проектування в системі AutoCAD",
-        description: "Проектування в AutoCad та тривимірне моделювання",
+        nameOfCourse:"Проєктування в системі AutoCAD",
+        description: "Проєктування в AutoCad та тривимірне моделювання",
         link: "/cources/autocad"
     }, /*{
         nameOfCourse:"AutoCAD. Тривимірне моделювання (ІІ рівень)",
@@ -59,7 +55,7 @@ const dataArray = [
         link: null
     },*/ {
         nameOfCourse:"ArchiCAD базовий",
-        description: "Основи проектування в системі ArchiCad",
+        description: "Основи проєктування в системі ArchiCad",
         link: "/cources/archicad"
     }, {
         nameOfCourse:"Програмний комплекс Ліра-САПР",
@@ -69,9 +65,14 @@ const dataArray = [
         nameOfCourse:"Adobe Illustrator",
         description: "Проектування в AutoCad та тривимірне моделювання.",
         link: null
-    },*/ {
+    },*/{
+        nameOfCourse:"Універсальний. (\"Windows. Базовий\" + \"Microsoft Office\")",
+        description: "Курс вивчення комп'ютера для початківців у Львові",
+        link: "/cources/universal"
+    }, 
+    {
         nameOfCourse:"3D Studio Max",
-        description: "Проектування 3D-моделей за допомогою програми 3D Studio Max та її візуалізація у V-Ray, Corona",
+        description: "Проєктування 3D-моделей за допомогою програми 3D Studio Max та її візуалізація у V-Ray, Corona",
         link: "/cources/3dmax"
     }, {
         nameOfCourse:"Основи програмування на мовах С/С++",

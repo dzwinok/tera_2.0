@@ -34,7 +34,7 @@ export function Pricing() {
                   variant="paragraph"
                   className="mb-10 mt-2 w-full font-normal !text-gray-500"
                 >
-                  Вивчи основи проектування в системі ArchiCad та зроби свій перший готовий архітектурний проект разом з нами!
+                  Вивчи основи проєктування в системі ArchiCad та зроби свій перший готовий архітектурний проект разом з нами!
                 </Typography>
                 <div className="flex flex-wrap items-center gap-x-20 gap-y-6">
                   <Typography variant="h6" color="blue-gray">

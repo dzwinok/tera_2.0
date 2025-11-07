@@ -1,29 +1,33 @@
 import Discounts from "@/components/general/discounts"
+import CourseProgram from "@/components/general/program"
+import Subscribe from "@/components/general/subscribe-course"
+
+const styles = {
+    main: "w-full px-[20%] flex flex-col",
+    text: "space-y-4 pb-4",
+    header: "text-tera-green text-[62px] font-[600] py-5",
+};
 
 export default function Page(){
 
-
+    const archicadInfo = [
+        { label: "Плановий старт:", value: "8.01.2026" },
+        { label: "Тривалість навчання:", value: "~3 місяці" },
+        { label: "Кількість занять:", value: "20 занять" },
+    ];
 
     return(
-        <div className="w-full flex  flex-col px-[20%] space-y-4">
-            <div className="space-y-4">
-                <h2 className="text-tera-green text-[52px] font-[600] ">ArchiCad</h2>
+        <div className={styles.main}>
+            <div className={styles.text}>
+                <h2 className={styles.header}>Проєктування в ArchiCad</h2>
                 <p><b>ArchiCad</b> - це програма для автоматизованого процесу розробки моделей будівельних споруд. Дана програма дає можливість проектантові детально розробити архітектурно-будівельні конструкції і документацію до неї.</p>
                 <p>Набір інструментів та функцій даної програми роблять її незамінною для роботи архітекторів та проектантів, оскільки передбачає можливість візуалізації у тривимірному вигляді розроблюваного проекту у будь-який момент роботи.</p>
                 <p>Важливе значення програма має при підготовці розрахунків, оскільки при завантаженні відповідної вихідної інформації в систему ArchiCad, програма видає характеристику і розрахунки кошторисного плану.</p>
-                <p>Кваліфіковані викладачі-практики зможуть швидко і ефективно навчити основам проектування в програмі ArchiCad. Їхній багаторічний досвід допоможе слухачам освоїти основні прийоми, що значно полегшують роботу у програмі і уникати найтиповіших помилок, що могли б виникнути при самостійному вивченні програми.</p>
+                <p>Кваліфіковані викладачі-практики зможуть швидко і ефективно навчити основам проєктування в програмі ArchiCad. Їхній багаторічний досвід допоможе слухачам освоїти основні прийоми, що значно полегшують роботу у програмі і уникати найтиповіших помилок, що могли б виникнути при самостійному вивченні програми.</p>
 
             </div>
-            <span className="font-[700]"><b>Програма курсу (20 занять):</b></span>
-            <ul className="px-6 list-inside list-disc">
-                {programmArray.map((item,index)=>(
-                    <li className="flex items-center space-x-3 rtl:space-x-reverse" key={index}>{item}
-                        <svg className="ml-2 flex shrink-0 w-3.5 h-3.5 text-green-500 dark:text-green-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 12">
-                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5.917 5.724 10.5 15 1.5"/>
-                        </svg>
-                    </li>
-                ))}
-            </ul>
+            <CourseProgram programmArray={programmArray} />
+            <Subscribe title="ArchiCad" price="9 000" courseInfo={archicadInfo}/>
 
         </div>
     )

@@ -2,7 +2,7 @@ export default function CourseProgram({title, programmArray}) {
 
     return(
         <div className="py-8 ">
-            <div className="px-[20%]">
+            <div className="">
                 <span className="text-[28px] font-[500] text-gray-800">{title ? title : "Програма курсу:"}</span>
                 <ul className="space-y-4 pt-6 text-left text-gray-700 dark:text-gray-400">
                     {programmArray.map((item,index)=>(

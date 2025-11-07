@@ -1,13 +1,25 @@
 import Discounts from "@/components/general/discounts"
+import CourseProgram from "@/components/general/program"
+import Subscribe from "@/components/general/subscribe-course"
+
+const styles = {
+    main: "w-full px-[20%] flex flex-col",
+    text: "space-y-4 pb-4",
+    header: "text-tera-green text-[62px] font-[600] py-5",
+};
 
 export default function Page(){
 
-
+    const indesignInfo = [
+        { label: "Плановий старт:", value: "09.02.2026" },
+        { label: "Тривалість навчання:", value: "3 місяці" },
+        { label: "Кількість занять:", value: "15 занять" },
+    ];
 
     return(
-        <div className="w-full flex  flex-col px-[20%] space-y-4">
-            <div className="space-y-4">
-                <h2 className="text-tera-green text-[52px] font-[600] ">Adobe InDesign</h2>
+        <div className={styles.main}>
+            <div className={styles.text}>
+                <h2 className={styles.header}>Adobe InDesign</h2>
                 <p>Курс <b>InDesign</b> орієнтований на освоєння однієї із найпопулярніших програм додрукової підготовки поліграфічної продукції. 
                     <b> InDesign</b>  широко застосовується для верстки і макетування від простих завдань до складних проектів у сфері поліграфії. За допомогою <b>InDesign</b> можна зверстати макети сторінок для книг, журналів, фотокниг, рекламної продукції і навіть інтернет-сторінок.</p>
                 <p>В курсі <b>InDesign</b> розглядаються як теоретичні, так і практичні аспекти верстки, підготовки продукції до друку, правила дизайну, композиція, інструменти програми <b>InDesign</b>, її функції, налаштування, ефекти, секрети майстерності, практичні поради і нюанси роботи в <b>InDesign</b>, для пошуку яких самостійно Вам довелося б переглянути не один підручник.</p>
@@ -15,16 +27,8 @@ export default function Page(){
                 <p>Бонусом у навчанні на даному курсі є урізноманітнення програми курсу за допомогою прийомів, які здатні полегшити виконання завдань. Це: рекомендацій правильного налаштування робочого поля чи використання комбінації "гарячих клавіш", а не ручний вибір функцій у меню.</p>
                 
             </div>
-            <span className="font-[700]"><b>Програма курсу (15 занять):</b></span>
-            <ul className="px-6 list-inside list-disc">
-                {programmArray.map((item,index)=>(
-                    <li className="flex items-center space-x-3 rtl:space-x-reverse" key={index}>{item}
-                        <svg className="ml-2 flex shrink-0 w-3.5 h-3.5 text-green-500 dark:text-green-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 12">
-                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5.917 5.724 10.5 15 1.5"/>
-                        </svg>
-                    </li>
-                ))}
-            </ul>
+            <CourseProgram programmArray={programmArray} />
+            <Subscribe title="Adobe InDesign" price="6 000" courseInfo={indesignInfo}/>
 
         </div>
     )

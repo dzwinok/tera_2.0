@@ -50,7 +50,7 @@ export function CarouselFeatures() {
                   className="mb-5 text-xl font-normal "
                 >
                   3D Studio Max <br />
-                    Проектування 3D-моделей за допомогою програми 3D Studio Max та її візуалізація у V-Ray, Corona
+                    Проєктування 3D-моделей за допомогою програми 3D Studio Max та її візуалізація у V-Ray, Corona
                 </Typography>
                 <Typography
                   variant="small"

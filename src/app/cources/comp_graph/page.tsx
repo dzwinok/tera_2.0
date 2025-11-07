@@ -1,13 +1,23 @@
+"use client"
 import Discounts from "@/components/general/discounts"
+import CourseProgram from "@/components/general/program"
+import Subscribe from "@/components/general/subscribe-course"
+import {Button, Card, CardBody, Typography} from "@material-tailwind/react";
+import React from "react";
+
+const styles = {
+    main: "w-full px-[20%] flex flex-col",
+    text: "space-y-4 pb-4",
+    header: "text-tera-green text-[62px] font-[600] py-5",
+};
 
 export default function Page(){
 
 
-
     return(
-        <div className="w-full flex  flex-col px-[20%] space-y-4">
-            <div className="space-y-4">
-                <h2 className="text-tera-green text-[52px] font-[600] ">Комп'ютерна графіка</h2>
+        <div className={styles.main}>
+            <div className={styles.text}>
+                <h2 className={styles.header}>Комп'ютерна графіка</h2>
                 <p>
                     Курс <b>"Комп'ютерна графіка"</b> навчає роботі з програмами пакету <b>Photoshop та CorelDraw.</b>
                 </p>
@@ -27,16 +37,66 @@ export default function Page(){
                     виконання професійного дизайну.
                 </p>
             </div>
-            <span className="font-[700]">Програма курсу (30 занять):</span>
-            <ul className="px-6 list-inside list-disc">
-                {programmArray.map((item,index)=>(
-                    <li className="flex items-center space-x-3 rtl:space-x-reverse" key={index}>{item}
-                        <svg className="ml-2 flex shrink-0 w-3.5 h-3.5 text-green-500 dark:text-green-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 12">
-                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5.917 5.724 10.5 15 1.5"/>
-                        </svg>
-                    </li>
-                ))}
-            </ul>
+            <CourseProgram programmArray={programmArray} />
+
+            
+            <div className="py-8 flex flex-row justify-between flex-wrap ">
+                <div
+                    className="container bg-tera-dark-green bg-opacity-25 text-gray-700 p-4 rounded-lg shadow-lg w-1/4 mx-auto">
+                    <div className="text-2xl h-16 font-semibold mb-4 align-middle">Курс "Комп'ютерна графіка"</div>
+                    <hr className="py-4 w-[160px] border-gray-500"/>
+    
+                    <div className="text-base mb-2 font-normal text-gray-600">Плановий старт: 19.01.2026</div>
+                    <div className="text-base mb-2 font-normal text-gray-600">Тривалість навчання: 4 місяці</div>
+                    <div className="text-base mb-2 font-normal text-gray-600">Кількість занять: 30 занять</div>
+                    <div className="flex py-2 justify-center font-medium">
+                        <span className=" text-2xl">7 500 грн</span>
+                    </div>
+                    <div className="flex justify-center">
+                        <Button className="py-4 px-8 my-4">
+                            Записатись
+                        </Button>
+                    </div>
+                </div>
+                <div
+                    className="container bg-tera-dark-green bg-opacity-25 text-gray-700 p-4 rounded-lg shadow-lg w-1/4 mx-auto">
+                    <div className="text-2xl h-16 font-semibold mb-4 align-middle">Курс "CorelDraw"</div>
+                    <hr className="py-4 w-[160px] border-gray-500"/>
+
+                    <div className="text-base mb-2 font-normal text-gray-600">Плановий старт: 03.02.2026</div>
+                    <div className="text-base mb-2 font-normal text-gray-600">Тривалість навчання: 1 місяць</div>
+                    <div className="text-base mb-2 font-normal text-gray-600">Кількість занять: 13 занять</div>
+                    <div className="flex py-2 justify-center font-medium">
+                        <span className=" text-2xl">3 300 грн</span>
+                    </div>
+                    <div className="flex justify-center">
+                        <Button className="py-4 px-8 my-4">
+                            Записатись
+                        </Button>
+                    </div>
+                </div>
+                <div
+                    className="container bg-tera-dark-green bg-opacity-25 text-gray-700 p-4 rounded-lg shadow-lg w-1/4 mx-auto">
+                    <div className="text-2xl h-16 font-semibold mb-4 align-middle">Курс "Photoshop"</div>
+                    <hr className="py-4 w-[160px] border-gray-500"/>
+
+                    <div className="text-base mb-2 font-normal text-gray-600">Плановий старт: 23.12.2025</div>
+                    <div className="text-base mb-2 font-normal text-gray-600">Тривалість навчання: 2 місяці</div>
+                    <div className="text-base mb-2 font-normal text-gray-600">Кількість занять: 17 занять</div>
+                    <div className="flex py-2 justify-center font-medium">
+                        <span className=" text-2xl">4 300 грн</span>
+                    </div>
+                    <div className="flex justify-center">
+                        <Button className="py-4 px-8 my-4">
+                            Записатись
+                        </Button>
+                    </div>
+                </div>
+            </div>
+        
+
+            
+            
             <Discounts/>
         </div>
     )
@@ -64,3 +124,4 @@ const programmArray = [
     "Створення спеціальних об'єктів",
     "Actions та стилізація зображень",
 ]
+
