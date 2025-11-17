@@ -1,65 +1,95 @@
+import {Card, CardBody, Typography} from "@material-tailwind/react";
+import React from "react";
+
 export default function Discounts(){
 
 
-    return(<><span className="font-bold text-base text-xl">Система наших ЗНИЖОК:</span>
-            {/*<div className="px-[10%] flex flex-row justify-between flex-wrap ">
-                <div className="container bg-gradient-to-r from-tera-green to-tera-light-green text-white p-4 rounded-lg shadow-lg w-1/3 mx-auto">
-                    <div className="text-xl h-16 font-bold mb-4">На кожен наступний курс</div>
-                    <div className="text-base mb-4">Отримай <span className="text-yellow-400 font-bold">10% знижки</span> якщо раніше вже проходив в нас курс!
-                    </div>
-                    <div className="text-sm mt-4">
-                        <p>Знижка дійсна <span className="font-semibold">протягом 2 років</span> після закінчення попереднього курсу</p>
-                    </div>
-                </div>
-                <div className="container bg-gradient-to-r from-tera-green to-tera-light-green text-white p-4 rounded-lg shadow-lg w-1/4 mx-auto">
-                    <div className="text-xl h-16 font-bold mb-4">Приводь друга!</div>
-                    <div className="text-base mb-4">Отримай <span className="text-yellow-400 font-bold">20% знижки</span> якщо приведеш свого друга до нас!
-                    </div>
-                    <div className="text-sm mt-4">
-                        <p>Знижка дійсна на весь час поки у тебе є друзі по інтересах ;)</p>
-                    </div>
-                </div>
-                <div className="container bg-gradient-to-r from-tera-green to-tera-light-green text-white p-4 rounded-lg shadow-lg w-1/3 mx-auto">
-                    <div className="text-xl h-16 font-bold mb-4">Для військовослужбовців</div>
-                    <div className="text-base mb-4">Для захисників нашої держави надаємо <span className="text-yellow-400 font-bold">25% знижки!</span><br></br> Дякуємо нашим героям!!
-                    </div>
-                    <div className="text-sm mt-4">
-                        <p>Знижка надається діючим військовим ЗСУ, НГУ, ТРО при пред’явленні посвідчення або військового квитка</p>
-                    </div>
-                </div>
-            </div>*/}
-            
-            
-            
-            
-            
-        <div className="px-[10%] flex flex-row justify-between flex-wrap ">
-            <div className="container bg-gradient-to-r from-tera-green to-tera-light-green text-white p-4 rounded-lg shadow-lg w-1/4 mx-auto">
-                <div className="text-xl h-16 font-bold mb-4 align-middle">На кожен наступний курс</div>
-                <div className="text-base mb-4">Отримай <span className="text-yellow-400 font-bold">10% знижки</span> якщо раніше вже проходив в нас курс!
-                </div>
-                <div className="text-sm mt-4">
-                    <p>Знижка дійсна <span className="font-semibold">протягом 2 років</span> після закінчення попереднього курсу</p>
-                </div>
-            </div>
-            <div className="container bg-gradient-to-r from-tera-green to-tera-light-green text-white p-4 rounded-lg shadow-lg w-1/3 mx-auto">
-                <div className="text-xl h-16 font-bold mb-4 align-middle">Для військових</div>
-                <div className="text-base mb-4">Для військовослужбовців надаємо <span className="text-yellow-400 font-bold">25% знижки!</span><br></br> Дякуємо нашим героям!!
-                </div>
-                <div className="text-sm mt-4">
-                    <p>Знижка надається діючим військовим ЗСУ, НГУ, ТРО при пред’явленні посвідчення або військового квитка</p>
-                </div>
-            </div>
-            <div className="container bg-gradient-to-r from-tera-green to-tera-light-green text-white p-4 rounded-lg shadow-lg w-1/4 mx-auto">
-                <div className="text-xl h-16 font-bold mb-4">Приводь друга!</div>
-                <div className="text-base mb-4">Отримай <span className="text-yellow-400 font-bold">20% знижки</span> якщо приведеш свого друга до нас!
-                </div>
-                <div className="text-sm mt-4">
-                    <p>Знижка дійсна на весь час поки у тебе є друзі по інтересах ;)</p>
-                </div>
+    return(
+        <div>
+                  
+            <div className="pt-8 bg-tera-dark-green bg-opacity-25 place-items-center">
+                
+                <span className="px-[20%] text-[28px] font-[500] text-gray-800">Система наших ЗНИЖОК:</span>
+                <section className="px-[10%] gap-8 container mx-auto py-12 grid grid-cols-1 items-center lg:gap-0 lg:grid-cols-3 items-stretch">
+                    <Card className=" flex flex-center bg-white h-full lg:w-[80%] lg:justify-self-start">
+                        <CardBody>
+                            <div className="items-center">
+                                <div>
+        
+                                    <div className="flex flex-wrap items-center gap-x-20 ">
+                                        <Typography variant="h4" color="blue-gray" className="font-bold h-24">
+                                            На кожен наступний курс
+                                        </Typography>
+                                        <Typography
+                                            variant="paragraph"
+                                            color="blue-gray"
+                                            className="w-full font-medium h-24"
+                                        >
+                                            Отримай <span className="text-red-800 font-bold">10% знижки</span> якщо раніше вже проходив в нас курс!
+                                        </Typography>
+                                        <Typography color="blue-gray" className="text-sm">
+                                            *знижка дійсна протягом 2 років після закінчення попереднього курсу
+                                        </Typography>
+                                    </div>
+                                </div>
+        
+                            </div>
+                        </CardBody>
+                    </Card>
+                    <Card className=" w-[110%] flex flex-center bg-white h-full justify-self-center">
+                        <CardBody>
+                            <div className="items-center">
+                                <div>
+        
+                                    <div className="flex flex-wrap items-center gap-x-20">
+                                        <Typography variant="h4" color="blue-gray" className="font-bold h-24">
+                                            Для військових
+                                        </Typography>
+                                        <Typography
+                                            variant="paragraph"
+                                            color="blue-gray"
+                                            className="w-full font-medium h-24"
+                                        >
+                                            Для військовослужбовців надаємо <span className="text-red-800 font-bold">25% знижки!</span><br></br> Дякуємо нашим героям!!!
+                                        </Typography>
+                                        <Typography color="blue-gray" className="text-sm">
+                                            *знижка надається діючим військовим ЗСУ, НГУ, ТРО при пред’явленні посвідчення або військового квитка
+                                        </Typography>
+                                    </div>
+                                </div>
+        
+                            </div>
+                        </CardBody>
+                    </Card>
+                    <Card className="flex flex-center bg-white h-full lg:w-[80%] lg:justify-self-end">
+                        <CardBody>
+                            <div className="items-center">
+                                <div>
+        
+                                    <div className="flex flex-wrap items-center gap-x-20">
+                                        <Typography variant="h4" color="blue-gray" className="font-bold h-24">
+                                            Приводь друга!
+                                        </Typography>
+                                        <Typography
+                                            variant="paragraph"
+                                            color="blue-gray"
+                                            className="w-full font-medium h-24"
+                                        >
+                                            Отримай <span className="text-red-800 font-bold">20% знижки</span> якщо приведеш свого друга до нас!
+                                        </Typography>
+                                        <Typography color="blue-gray" className="text-sm">
+                                            *знижка дійсна на весь час поки у тебе є друзі по інтересах ;)
+                                        </Typography>
+                                    </div>
+                                </div>
+        
+                            </div>
+                        </CardBody>
+                    </Card>
+                </section>
             </div>
         </div>
-        </>
+        
 
 
 

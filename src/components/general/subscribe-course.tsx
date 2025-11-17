@@ -1,9 +1,21 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
+import NewsletterModal from "@/components/custom/NewsletterModal"
+import { useNewsletterModal } from "C:/Users/Dzwinka/RiderProjects/tera_2.0/backend/node_modules/@dnd-kit/utilities/dist/hooks/useNewsletterModal.tsx"
 import { Card, CardBody, Button, Typography } from "@material-tailwind/react";
-
+//TODO: path to file useNewsletterModal is local (i have to crate a copy of this file in /src/hooks/useNewsletterModal.tsx)
 
 export function Subscribe({title, price, courseInfo}) {
+    const { isOpen, openModal, closeModal } = useNewsletterModal();
+    const [confirmed, setConfirmed] = useState<null | { email: string; phone: string; digestType: string }>(null);
+
+    const handleSubmit = (data: { email: string; phone: string; digestType: string }) => {
+        // тут ти можеш відправити запит на сервер або зберегти дані
+        console.log("Підтверджено:", data);
+        setConfirmed(data);
+        // Закриваємо модалку через closeModal
+        closeModal();
+    };
     return (
         <div className="py-8 grid place-items-center">
             <section className="container mx-auto px-[20%]">
@@ -16,7 +28,7 @@ export function Subscribe({title, price, courseInfo}) {
                         <div className="grid grid-cols-1 items-center lg:grid-cols-2">
                             <div>
                                 <div className="pt-6">
-                                    <hr className="w-72 border-gray-500" />
+                                    <hr className="sm:mx-auto border-gray-500" />
                                 </div>
 
                                 <div className="mt-8 ">
@@ -52,19 +64,23 @@ export function Subscribe({title, price, courseInfo}) {
                                 <Typography variant="h1" color="blue-gray" className="text-3xl">
                                     {price} грн
                                 </Typography>
-                                <Button color="gray" className="py-4 px-8 my-4">
+                                <Button onClick={openModal} color="gray" className="py-4 px-8 my-4">
                                     Записатись
                                 </Button>
-                                <Typography
-                                    variant="small"
-                                    className="font-normal !text-gray-500"
-                                >
-
-                                </Typography>
+                                
+                                <NewsletterModal isOpen={isOpen} onClose={closeModal} onSubmit={handleSubmit}/>
+                                
                             </div>
                         </div>
                     </CardBody>
                 </Card>
+                {confirmed && (
+                    <div className="flex justify-center ">
+                        <div className="mt-4 msg-box text-center">
+                            Запис на курс <b>{confirmed.digestType}</b> підтверджено. Очікуйте листа.
+                        </div>
+                    </div>
+                )}
             </section>
         </div>
     );

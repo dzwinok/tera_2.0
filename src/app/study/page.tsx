@@ -59,7 +59,7 @@ const dataArray = [
         link: "/cources/archicad"
     }, {
         nameOfCourse:"Програмний комплекс Ліра-САПР",
-        description: "Навчання проектуванню в програмному комплексі ЛІРА",
+        description: "Навчання проєктуванню в програмному комплексі ЛІРА",
         link: "/cources/lira"
     }, /*{
         nameOfCourse:"Adobe Illustrator",

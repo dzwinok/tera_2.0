@@ -1,3 +1,6 @@
+"use client"
+import OtherCourses from "@/app/homepage/other-courses"
+import Popup from "@/components/general/popup"
 import Discounts from "@/components/general/discounts"
 import CourseProgram from "@/components/general/program"
 import Subscribe from "@/components/general/subscribe-course"
@@ -5,7 +8,7 @@ import Subscribe from "@/components/general/subscribe-course"
 const styles = {
     main: "w-full px-[20%] flex flex-col",
     text: "space-y-4 pb-4",
-    header: "text-tera-green text-[62px] font-[600] py-5",
+    header: "text-tera-green leading-[72px] text-[62px] font-[600] py-5",
 };
 
 export default function Page(){
@@ -17,19 +20,24 @@ export default function Page(){
     ];
 
     return(
-        <div className={styles.main}>
-            <div className={styles.text}>
-                <h2 className={styles.header}>Adobe InDesign</h2>
-                <p>Курс <b>InDesign</b> орієнтований на освоєння однієї із найпопулярніших програм додрукової підготовки поліграфічної продукції. 
-                    <b> InDesign</b>  широко застосовується для верстки і макетування від простих завдань до складних проектів у сфері поліграфії. За допомогою <b>InDesign</b> можна зверстати макети сторінок для книг, журналів, фотокниг, рекламної продукції і навіть інтернет-сторінок.</p>
-                <p>В курсі <b>InDesign</b> розглядаються як теоретичні, так і практичні аспекти верстки, підготовки продукції до друку, правила дизайну, композиція, інструменти програми <b>InDesign</b>, її функції, налаштування, ефекти, секрети майстерності, практичні поради і нюанси роботи в <b>InDesign</b>, для пошуку яких самостійно Вам довелося б переглянути не один підручник.</p>
-                <p>Також програма <b>InDesign</b> може доповнити і спростити роботу над проектами, які розроблялися в PhotoShop, CorelDraw  та illustrator, адже дозволяє швидше і простішими способами змакетувати різні графічні елементи.</p>
-                <p>Бонусом у навчанні на даному курсі є урізноманітнення програми курсу за допомогою прийомів, які здатні полегшити виконання завдань. Це: рекомендацій правильного налаштування робочого поля чи використання комбінації "гарячих клавіш", а не ручний вибір функцій у меню.</p>
-                
+        <div>
+            <div className={styles.main}>
+                <div className={styles.text}>
+                    <h2 className={styles.header}>Adobe InDesign</h2>
+                    <p>Курс <b>InDesign</b> орієнтований на освоєння однієї із найпопулярніших програм додрукової підготовки поліграфічної продукції. 
+                        <b> InDesign</b>  широко застосовується для верстки і макетування від простих завдань до складних проектів у сфері поліграфії. За допомогою <b>InDesign</b> можна зверстати макети сторінок для книг, журналів, фотокниг, рекламної продукції і навіть інтернет-сторінок.</p>
+                    <p>В курсі <b>InDesign</b> розглядаються як теоретичні, так і практичні аспекти верстки, підготовки продукції до друку, правила дизайну, композиція, інструменти програми <b>InDesign</b>, її функції, налаштування, ефекти, секрети майстерності, практичні поради і нюанси роботи в <b>InDesign</b>, для пошуку яких самостійно Вам довелося б переглянути не один підручник.</p>
+                    <p>Також програма <b>InDesign</b> може доповнити і спростити роботу над проектами, які розроблялися в PhotoShop, CorelDraw  та illustrator, адже дозволяє швидше і простішими способами змакетувати різні графічні елементи.</p>
+                    <p>Бонусом у навчанні на даному курсі є урізноманітнення програми курсу за допомогою прийомів, які здатні полегшити виконання завдань. Це: рекомендацій правильного налаштування робочого поля чи використання комбінації "гарячих клавіш", а не ручний вибір функцій у меню.</p>
+                    
+                </div>
+                <Popup/>
+                <CourseProgram programmArray={programmArray} />
+                <Subscribe title="Adobe InDesign" price="6 000" courseInfo={indesignInfo}/>
+    
             </div>
-            <CourseProgram programmArray={programmArray} />
-            <Subscribe title="Adobe InDesign" price="6 000" courseInfo={indesignInfo}/>
-
+            <OtherCourses/>
+            <Discounts/>
         </div>
     )
 }

@@ -1,3 +1,6 @@
+"use client"
+import OtherCourses from "@/app/homepage/other-courses"
+import Popup from "@/components/general/popup"
 import Discounts from "@/components/general/discounts"
 import CourseProgram from "@/components/general/program"
 import Subscribe from "@/components/general/subscribe-course"
@@ -5,30 +8,35 @@ import Subscribe from "@/components/general/subscribe-course"
 const styles = {
     main: "w-full px-[20%] flex flex-col",
     text: "space-y-4 pb-4",
-    header: "text-tera-green text-[62px] font-[600] py-5",
+    header: "text-tera-green leading-[72px] text-[62px] font-[600] py-5",
 };
 
 export default function Page(){
 
     const archicadInfo = [
-        { label: "Плановий старт:", value: "8.01.2026" },
+        { label: "Плановий старт:", value: "05.01.2026" },
         { label: "Тривалість навчання:", value: "~3 місяці" },
         { label: "Кількість занять:", value: "20 занять" },
     ];
 
     return(
-        <div className={styles.main}>
-            <div className={styles.text}>
-                <h2 className={styles.header}>Проєктування в ArchiCad</h2>
-                <p><b>ArchiCad</b> - це програма для автоматизованого процесу розробки моделей будівельних споруд. Дана програма дає можливість проектантові детально розробити архітектурно-будівельні конструкції і документацію до неї.</p>
-                <p>Набір інструментів та функцій даної програми роблять її незамінною для роботи архітекторів та проектантів, оскільки передбачає можливість візуалізації у тривимірному вигляді розроблюваного проекту у будь-який момент роботи.</p>
-                <p>Важливе значення програма має при підготовці розрахунків, оскільки при завантаженні відповідної вихідної інформації в систему ArchiCad, програма видає характеристику і розрахунки кошторисного плану.</p>
-                <p>Кваліфіковані викладачі-практики зможуть швидко і ефективно навчити основам проєктування в програмі ArchiCad. Їхній багаторічний досвід допоможе слухачам освоїти основні прийоми, що значно полегшують роботу у програмі і уникати найтиповіших помилок, що могли б виникнути при самостійному вивченні програми.</p>
-
+        <div>
+            <div className={styles.main}>
+                <div className={styles.text}>
+                    <h2 className={styles.header}>Проєктування в ArchiCad</h2>
+                    <p><b>ArchiCad</b> - це програма для автоматизованого процесу розробки моделей будівельних споруд. Дана програма дає можливість проектантові детально розробити архітектурно-будівельні конструкції і документацію до неї.</p>
+                    <p>Набір інструментів та функцій даної програми роблять її незамінною для роботи архітекторів та проектантів, оскільки передбачає можливість візуалізації у тривимірному вигляді розроблюваного проекту у будь-який момент роботи.</p>
+                    <p>Важливе значення програма має при підготовці розрахунків, оскільки при завантаженні відповідної вихідної інформації в систему ArchiCad, програма видає характеристику і розрахунки кошторисного плану.</p>
+                    <p>Кваліфіковані викладачі-практики зможуть швидко і ефективно навчити основам проєктування в програмі ArchiCad. Їхній багаторічний досвід допоможе слухачам освоїти основні прийоми, що значно полегшують роботу у програмі і уникати найтиповіших помилок, що могли б виникнути при самостійному вивченні програми.</p>
+    
+                </div>
+                <Popup/>
+                <CourseProgram programmArray={programmArray} />
+                <Subscribe title="ArchiCad" price="8 500" courseInfo={archicadInfo}/>
+    
             </div>
-            <CourseProgram programmArray={programmArray} />
-            <Subscribe title="ArchiCad" price="9 000" courseInfo={archicadInfo}/>
-
+            <OtherCourses/>
+            <Discounts/>
         </div>
     )
 }

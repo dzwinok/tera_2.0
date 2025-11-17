@@ -2,6 +2,7 @@
 import React from "react";
 import { Card, CardBody, Button, Typography } from "@material-tailwind/react";
 import { CheckIcon } from "@heroicons/react/24/outline";
+import Link from 'next/link';
 
 
 const PRICING_OPTIONS = [
@@ -20,7 +21,7 @@ export function Pricing() {
             Пропозиція місяця
           </Typography>
           <Typography variant="lead" className="mt-2 !text-gray-500 lg:w-5/12">
-            Встигни скористатись акційною пропозицією до кінця травня та отримай кваліфікований курс для твого фаху
+            Встигни скористатись акційною пропозицією до кінця року та отримай кваліфікований курс для твого фаху
           </Typography>
         </div>
         <Card className="px-6 pb-5 bg-tera-dark-green bg-opacity-25">
@@ -34,7 +35,7 @@ export function Pricing() {
                   variant="paragraph"
                   className="mb-10 mt-2 w-full font-normal !text-gray-500"
                 >
-                  Вивчи основи проєктування в системі ArchiCad та зроби свій перший готовий архітектурний проект разом з нами!
+                  Вивчи основи проєктування в системі ArchiCad та зроби свій перший готовий архітектурний проєкт разом з нами!
                 </Typography>
                 <div className="flex flex-wrap items-center gap-x-20 gap-y-6">
                   <Typography variant="h6" color="blue-gray">
@@ -67,9 +68,16 @@ export function Pricing() {
                 <Typography variant="h1" color="blue-gray" className="text-4xl">
                   8 500 грн
                 </Typography>
-                <Button color="gray" className="my-4">
-                  Старт 5 січня
-                </Button>
+                <Link href="/cources/archicad">
+                  <Button color="gray" className="my-4 px-6 flex flex-wrap gap-2">
+                    детальніше
+                    <svg width="1.5em" height="1.5em" stroke-width="1.5" viewBox="0 0 24 24" fill="none"
+                         xmlns="http://www.w3.org/2000/svg" color="currentColor" className="ml-1 h-4 w-4 stroke-2">
+                      <path d="M9 6L15 12L9 18" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                      </path>
+                    </svg>
+                  </Button>
+                </Link>
                 <Typography
                   variant="small"
                   className="font-normal !text-gray-500"

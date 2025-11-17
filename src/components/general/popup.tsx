@@ -31,6 +31,20 @@ const Modal: React.FC<ModalProps> = ({
         }
     };
 
+    const handleBackdropClick = (event: React.MouseEvent<HTMLDialogElement>) => {
+        const dialog = event.currentTarget;
+        const rect = dialog.getBoundingClientRect();
+        const clickInside =
+            event.clientX >= rect.left &&
+            event.clientX <= rect.right &&
+            event.clientY >= rect.top &&
+            event.clientY <= rect.bottom;
+
+        if (!clickInside) {
+            onClose?.();
+        }
+    };
+
     useEffect(() => {
         setModalOpen(isOpen);
     }, [isOpen]);
@@ -48,24 +62,46 @@ const Modal: React.FC<ModalProps> = ({
     }, [isModalOpen]);
 
     return (
-        <dialog ref={modalRef} onKeyDown={handleKeyDown} className="modal w-[350px] md:w-[500px] top-[33%]">
+        <dialog ref={modalRef} 
+                onKeyDown={handleKeyDown} 
+                onClick={handleBackdropClick} 
+                className="modal w-[350px] md:w-[500px] inset-0 bg-white rounded-lg shadow-lg p-8 max-w-[90%] w-[400px]">
             {hasCloseBtn && (
                 <FaTimes size={20} className="modal-close-btn hover:bg-gray-200 rounded" onClick={handleCloseModal}/>
             )}
             {children}
         </dialog>
+        
     );
 };
 
+
 interface NewsletterModalData {
     email: string;
+    phone: string;
     digestType: string;
 }
 
 const initialNewsletterModalData: NewsletterModalData = {
     email: '',
-    digestType: 'Універсальний',
+    phone: '',
+    digestType: 'Microsoft Office',
 };
+
+const courses = [
+    "Microsoft Office",
+    "Універсальний",
+    "Windows. Базовий",
+    "Кошторисна справа з використанням програми АВК-5",
+    "Комп'ютерна графіка",
+    "Adobe Indesign",
+    "Проєктування в системі AutoCAD",
+    "ArchiCAD базовий",
+    "Програмний комплекс Ліра-САПР",
+    "3D Studio Max",
+    "Основи програмування на мовах С/С++",
+    "Програмування в 1С (BAS)"
+]
 
 interface NewsletterModalProps {
     isOpen: boolean;
@@ -131,6 +167,20 @@ const NewsletterModal: React.FC<NewsletterModalProps> = ({
                     />
                 </div>
                 <div className="form-row">
+                    <label htmlFor="phone" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Номер телефону</label>
+                    <input
+                        type="tel"
+                        id="phone"
+                        name="phone"
+                        value={formState.phone}
+                        onChange={handleInputChange}
+                        required
+                        pattern="[0-9+() -]{7,15}"
+                        className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                        placeholder="+380XXXXXXXXX"
+                    />
+                </div>
+                <div className="form-row">
                     <label htmlFor="digestType" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Обраний курс</label>
                     <select
                         id="digestType"
@@ -140,18 +190,9 @@ const NewsletterModal: React.FC<NewsletterModalProps> = ({
                         className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                         required
                     >
-                        <option value="weekly">Microsoft Office</option>
-                        <option value="daily">Універсальний</option>
-                        <option value="monthly">Windows. Базовий</option>
-                        <option value="monthly">Кошторисна справа з використанням програми АВК-5</option>
-                        <option value="monthly">Комп'ютерна графіка</option>
-                        <option value="monthly">Adobe Indesign</option>
-                        <option value="monthly">Проєктування в системі AutoCAD</option>
-                        <option value="monthly">ArchiCAD базовий</option>
-                        <option value="monthly">Програмний комплекс Ліра-САПР</option>
-                        <option value="monthly">3D Studio Max</option>
-                        <option value="monthly">Основи програмування на мовах С/С++</option>
-                        <option value="monthly">Програмування в 1С (BAS)</option>
+                        {courses.map(course => (
+                            <option key={course} value={course}>{course}</option>
+                        ))}
                         
                     </select>
                 </div>
@@ -183,13 +224,19 @@ const Popup = () => {
 
     return (
         <>
-            <div style={{ display: "flex", gap: "1em" }} className="flex justify-center">
-                <button onClick={handleOpenNewsletterModal} className="block text-white bg-tera-green hover:bg-tera-dark-green focus:ring-4 focus:outline-none focus:ring-tera-dark-green font-medium rounded-lg text-xl px-5 py-2.5 text-center">Записатись на курс</button>
+            <div style={{ display: "flex", gap: "1em" }} className="flex justify-center pt-6">
+                <button onClick={handleOpenNewsletterModal} 
+                        /*className="block text-white bg-tera-green hover:bg-tera-dark-green font-medium rounded-lg text-xl px-8 py-4 text-center">*/
+                    className="relative flex font-medium rounded-lg text-lg items-center justify-center overflow-hidden bg-gray-800 text-white shadow-2xl transition-all before:absolute before:h-0 before:w-0 before:rounded-full before:bg-tera-green before:duration-500 before:ease-out hover:shadow-tera-green hover:before:h-56 hover:before:w-56">
+                    <span className="relative z-10 px-6 py-4">Записатись на курс</span>
+                </button>
             </div>
 
             {newsletterFormData && newsletterFormData.email && (
-                <div className="msg-box">
-                    Запис на курс <b>{newsletterFormData.digestType}</b> підтверджено. Очікуйте листа в електронній пошті.
+                <div className="flex justify-center ">
+                    <div className="msg-box text-center">
+                        Запис на курс <b>{newsletterFormData.digestType}</b> підтверджено. Очікуйте листа в електронній пошті.
+                    </div>
                 </div>
             )}
 

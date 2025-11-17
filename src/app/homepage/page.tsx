@@ -84,10 +84,10 @@ export default function Campaign() {
       {/*</WavyBackground>*/}
         {/*<Hero />*/}
       <OnlineCourse />
-     {/* <WhyChooseUs />
+        {/*<WhyChooseUs />
       <CarouselFeatures />*/}
       <Pricing />
-      {/*<OtherCourses />*/}
+      <OtherCourses />
     </div>
   );
 }

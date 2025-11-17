@@ -115,8 +115,8 @@
   margin-top: 2em;
   margin-bottom: 2em;
   border-radius: 0.5em;
-  border: 2px solid darkgreen;
-  background: lightgreen;
-  color: darkgreen;
+  border: 2px solid darkred;
+  background: rgb(163, 43, 34);
+  color: white;
 }
 

@@ -1,7 +1,7 @@
 "use client";
-
 import { Button, Typography, Card } from "@material-tailwind/react";
 import { WavyBackground } from "@/components/ui/waveBackground";
+import Link from 'next/link';
 
 function Hero() {
   return (
@@ -19,9 +19,11 @@ function Hero() {
               Teraconsult
             </p>
             <div className="mt-10">
-              <Button href="/study" className="px-5 py-3 text-xl" variant="gradient" color="white">
-                ЗАПИСАТИСЬ НА КУРС
-              </Button>
+              <Link href="/study">
+                <Button className="px-5 py-3 text-lg uppercase" variant="gradient" color="white">
+                  записатись на курс
+                </Button>
+              </Link>
             </div>
           </div>
         </div>

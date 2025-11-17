@@ -38,11 +38,11 @@ export default function Footer() {
                         <ul className="text-tera-dark-gray dark:text-gray-400 font-medium">
                             <li className="mb-4">
                                 <a href="https://www.google.com/maps/dir//%D0%B2%D1%83%D0%BB%D0%B8%D1%86%D1%8F+%D0%9F%D0%B5%D1%82%D1%80%D0%B0+%D0%94%D0%BE%D1%80%D0%BE%D1%88%D0%B5%D0%BD%D0%BA%D0%B0,+29,+%D0%9B%D1%8C%D0%B2%D1%96%D0%B2,+%D0%9B%D1%8C%D0%B2%D1%96%D0%B2%D1%81%D1%8C%D0%BA%D0%B0+%D0%BE%D0%B1%D0%BB%D0%B0%D1%81%D1%82%D1%8C,+%D0%A3%D0%BA%D1%80%D0%B0%D1%97%D0%BD%D0%B0,+79005/@49.8385668,23.9424677,12z/data=!4m8!4m7!1m0!1m5!1m1!1s0x473add71d5b4ab6b:0xddb7e9aaf1f5caa4!2m2!1d24.024868!2d49.838596?entry=ttu"
-                                   className="hover:underline">м.Львів, вул. П.Дорошенка, 29</a>
+                                   className="hover:underline">м. Львів, вул. П.Дорошенка, 29</a>
                             </li>
                             <li>
                                 <a href="https://www.google.com/maps/dir//%D0%B2%D1%83%D0%BB%D0%B8%D1%86%D1%8F+%D0%A8%D0%B5%D0%B2%D1%87%D0%B5%D0%BD%D0%BA%D0%B0,+102,+%D0%9A%D0%B8%D1%97%D0%B2,+%D0%A3%D0%BA%D1%80%D0%B0%D1%97%D0%BD%D0%B0/@50.373408,30.2804762,11z/data=!4m8!4m7!1m0!1m5!1m1!1s0x40d4c96b47fdbe07:0xeaf9e395d0d3b7d6!2m2!1d30.432397!2d50.3957444?entry=ttu"
-                                   className="hover:underline">м.Київ, вул. Т.Шевченка, 102</a>
+                                   className="hover:underline">м. Київ, вул. Т.Шевченка, 102</a>
                             </li>
                         </ul>
                     </div>
