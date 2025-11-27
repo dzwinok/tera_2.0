@@ -1,7 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import NewsletterModal from "@/components/custom/NewsletterModal"
-import { useNewsletterModal } from "C:/Users/Dzwinka/RiderProjects/tera_2.0/backend/node_modules/@dnd-kit/utilities/dist/hooks/useNewsletterModal.tsx"
+import { useNewsletterModal } from "/backend/node_modules/@dnd-kit/utilities/dist/hooks/useNewsletterModal"
 import { Card, CardBody, Button, Typography } from "@material-tailwind/react";
 //TODO: path to file useNewsletterModal is local (i have to crate a copy of this file in /src/hooks/useNewsletterModal.tsx)
 

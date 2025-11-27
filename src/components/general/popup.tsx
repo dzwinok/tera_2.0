@@ -2,6 +2,10 @@
 import { FaTimes } from "react-icons/fa";
 import React, { useState, useEffect, useRef } from "react";
 
+import NewsletterModal from "@/components/custom/NewsletterModal"
+import { useNewsletterModal } from "/backend/node_modules/@dnd-kit/utilities/dist/hooks/useNewsletterModal"
+
+
 interface ModalProps {
     isOpen: boolean;
     hasCloseBtn?: boolean;

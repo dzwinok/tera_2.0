@@ -16,7 +16,7 @@ export function LoggedInUser({
     return (
         <div className="flex gap-2">
             <Link
-                href="/sales" // TODO: make a user page to link there
+                href="/dashboard/profile" // TODO: make a user page to link there
                 className="font-semibold text-white hover:text-primary"
             >
                 {userData?.firstname} {userData?.lastname}

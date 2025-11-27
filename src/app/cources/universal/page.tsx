@@ -9,7 +9,7 @@ const styles = {
     main: "w-full px-[20%] flex flex-col",
     text: "space-y-4 pb-4",
     header: "text-tera-green leading-[72px] text-[62px] font-[600] py-5",
-    level_text: "text-[28px] font-[500] text-gray-800",
+    level_text: "text-[28px] font-bold font-[500] text-gray-800",
 };
 
 export default function Page(){

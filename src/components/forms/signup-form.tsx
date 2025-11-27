@@ -3,6 +3,7 @@ import { type FormState } from "@/data/validation/auth";
 import { useActionState } from "react";
 import Link from "next/link";
 import { actions } from "@/data/actions";
+import { useEffect, useState } from "react";
 
 import {
     CardTitle,
@@ -17,7 +18,13 @@ import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { SubmitButton } from "@/components/custom/submit-button";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import {
+    Select,
+    SelectContent,
+    SelectItem,
+    SelectTrigger,
+    SelectValue,
+} from "@/components/ui/select";
 
 import { ZodErrors } from "@/components/custom/ZodErrors";
 import { StrapiErrors } from "@/components/custom/StrapiErrors";
@@ -29,7 +36,8 @@ const styles = {
     content: "space-y-4",
     fieldGroup: "space-y-2",
     footer: "flex flex-col",
-    button: "w-full bg-tera-green hover:bg-tera-dark-green text-white font-bold py-2 px-4 rounded-xl",
+    button:
+        "w-full bg-tera-green hover:bg-tera-dark-green text-white font-bold py-2 px-4 rounded-xl",
     prompt: "mt-4 text-center text-sm",
     rowInputs: "flex flex-row justify-between",
     link: "underline ml-2",
@@ -47,10 +55,18 @@ export function SignupForm() {
         actions.auth.registerUserAction,
         INITIAL_STATE
     );
+    
+    const [genderValue, setGenderValue] = useState<string>("");
+    
+    useEffect(() => {
+        const g = formState?.data?.gender;
+        setGenderValue(typeof g === "string" ? g : "");
+    }, [formState?.data?.gender]);
 
     console.log("## will render on client ##");
     console.log(formState);
     console.log("###########################");
+
     return (
         <div className={styles.container}>
             <form action={formAction}>
@@ -61,6 +77,7 @@ export function SignupForm() {
                             Enter your details to create a new account
                         </CardDescription>
                     </CardHeader>
+
                     <CardContent className={styles.content}>
                         <div className={styles.rowInputs}>
                             <div className={styles.fieldGroup}>
@@ -69,7 +86,7 @@ export function SignupForm() {
                                     id="firstname"
                                     name="firstname"
                                     type="text"
-                                    placeholder="firstname"
+                                    placeholder="Володимир"
                                     defaultValue={formState?.data?.firstname || ""}
                                 />
                                 <ZodErrors error={formState?.zodErrors?.firstname} />
@@ -80,16 +97,17 @@ export function SignupForm() {
                                     id="lastname"
                                     name="lastname"
                                     type="text"
-                                    placeholder="lastname"
+                                    placeholder="Зелінський"
                                     defaultValue={formState?.data?.lastname || ""}
                                 />
                                 <ZodErrors error={formState?.zodErrors?.lastname} />
                             </div>
-                        </div>                        
+                        </div>
+                        
                         <div className={styles.fieldGroup}>
                             <Label htmlFor="gender">Gender</Label>
-                            <Select id="gender" name="gender" >
-                                <SelectTrigger>
+                            <Select value={genderValue} onValueChange={setGenderValue}>
+                                <SelectTrigger id="gender">
                                     <SelectValue placeholder="Select your gender" />
                                 </SelectTrigger>
                                 <SelectContent>
@@ -98,9 +116,11 @@ export function SignupForm() {
                                     <SelectItem value="other">Other</SelectItem>
                                     <SelectItem value="prefer-not-to-say">Prefer not to say</SelectItem>
                                 </SelectContent>
-                            </Select >
+                            </Select>
+                            <input type="hidden" name="gender" value={genderValue} />
                             <ZodErrors error={formState?.zodErrors?.gender} />
-                        </div>                        
+                        </div>
+
                         <div className={styles.fieldGroup}>
                             <Label htmlFor="birthdate">Date of birth</Label>
                             <Input
@@ -112,6 +132,7 @@ export function SignupForm() {
                             />
                             <ZodErrors error={formState?.zodErrors?.birthdate} />
                         </div>
+
                         <div className={styles.fieldGroup}>
                             <Label htmlFor="email">Email</Label>
                             <Input
@@ -123,6 +144,19 @@ export function SignupForm() {
                             />
                             <ZodErrors error={formState?.zodErrors?.email} />
                         </div>
+
+                        <div className={styles.fieldGroup}>
+                            <Label htmlFor="phone">Phone number</Label>
+                            <Input
+                                id="phone"
+                                name="phone"
+                                type="text"
+                                placeholder="+380 000 00 0000"
+                                defaultValue={formState?.data?.phone || ""}
+                            />
+                            <ZodErrors error={formState?.zodErrors?.phone} />
+                        </div>
+
                         <div className={styles.fieldGroup}>
                             <Label htmlFor="password">Password</Label>
                             <Input
@@ -135,11 +169,17 @@ export function SignupForm() {
                             <ZodErrors error={formState?.zodErrors?.password} />
                         </div>
                     </CardContent>
+
                     <CardFooter className={styles.footer}>
-                        <SubmitButton className="w-full" text="Sign Up" loadingText="Loading" />
+                        <SubmitButton
+                            className="w-full"
+                            text="Sign Up"
+                            loadingText="Loading"
+                        />
                         <StrapiErrors error={formState?.strapiErrors} />
                     </CardFooter>
                 </Card>
+
                 <div className={styles.prompt}>
                     Have an account?
                     <Link className={styles.link} href="signIn">

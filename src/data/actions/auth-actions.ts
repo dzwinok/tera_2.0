@@ -28,6 +28,9 @@ const schemaRegister = z.object({
     gender: z.string().min(2).max(15, {
         message: "",
     }),
+    phone: z.string().min(10).max(16, {
+        message: "",
+    }),
 });
 
 export async function registerUserAction(prevState: any, formData: FormData) {
@@ -37,7 +40,8 @@ export async function registerUserAction(prevState: any, formData: FormData) {
         password: formData.get("password"),
         email: formData.get("email"),
         age: formData.get("age"),
-        gender: formData.get("gender")
+        gender: formData.get("gender"),
+        phone: formData.get("phone"),
     });
 
     if (!validatedFields.success) {

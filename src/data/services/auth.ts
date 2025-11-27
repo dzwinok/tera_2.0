@@ -10,6 +10,7 @@ type TRegisterUser = {
     birthdate: Date;
     password: string;
     email: string;
+    phone: string;
 };
 
 type TLoginUser = {
@@ -20,9 +21,10 @@ type TLoginUser = {
 type TAuthUser = {
     id: number;
     documentId: string;
-    firstName: string;
-    lastName: string;
+    firstname: string;
+    lastname: string;
     email: string;
+    phone: string;
     
     bio?: string;
     image?: TImage;
@@ -73,11 +75,11 @@ export async function registerUserService(
             body: JSON.stringify({ ...userData }),
         });
 
-        //console.log("Hello From Register User Action25");
+        console.log("Hello From Register User Action25");
         const data = (await response.json()) as TAuthServiceResponse;
         console.dir(data, { depth: null });
 
-       // console.log("Hello From Register User Action26", data);
+        console.log("Hello From Register User Action26", data, typeof data);
         return data;
     } catch (error) {
         console.error("Registration Service Error:", error);

@@ -4,6 +4,7 @@ import {
     logoutUserAction,
     getAuthTokenAction,
 } from "./auth";
+import { updateProfileAction } from "./profile";
 
 export const actions = {
     auth: {
@@ -11,5 +12,8 @@ export const actions = {
         loginUserAction,
         logoutUserAction,
         getAuthTokenAction,
+    },
+    profile: {
+        updateProfileAction,
     },
 };

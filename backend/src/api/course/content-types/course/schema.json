@@ -1,0 +1,65 @@
+{
+  "kind": "collectionType",
+  "collectionName": "courses",
+  "info": {
+    "singularName": "course",
+    "pluralName": "courses",
+    "displayName": "Course"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "type": {
+      "type": "enumeration",
+      "required": true,
+      "enum": [
+        "microsoft_office",
+        "universal",
+        "win_base",
+        "avk-5",
+        "comp_graphic",
+        "coreldraw",
+        "photoshop",
+        "adobe_indesign",
+        "autocad",
+        "archicad",
+        "lira",
+        "studio3dmax",
+        "c",
+        "c_plus_plus",
+        "one_c"
+      ]
+    },
+    "start_date": {
+      "type": "date"
+    },
+    "users": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "courses"
+    },
+    "is_active": {
+      "type": "boolean"
+    },
+    "body": {
+      "type": "string"
+    },
+    "duration": {
+      "type": "integer",
+      "required": true
+    },
+    "num_lessons": {
+      "type": "integer",
+      "required": true
+    },
+    "course_type": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::course-type.course-type",
+      "inversedBy": "course"
+    }
+  }
+}

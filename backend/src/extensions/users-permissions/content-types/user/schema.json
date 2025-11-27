@@ -76,6 +76,17 @@
     },
     "gender": {
       "type": "string"
+    },
+    "courses": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::course.course",
+      "mappedBy": "users"
+    },
+    "phone": {
+      "type": "string",
+      "required": false,
+      "unique": false
     }
   }
 }

@@ -25,7 +25,7 @@ export async function registerUserAction(
     formData: FormData
 ): Promise<FormState> {
     console.log("Hello From Register User Action");
-
+    console.log(formData);
     const fields = {
         firstname: formData.get("firstname") as string,
         lastname: formData.get("lastname") as string,
@@ -33,6 +33,7 @@ export async function registerUserAction(
         email: formData.get("email") as string,
         gender: formData.get("gender") as string,
         birthdate: formData.get("birthdate") as Date,
+        phone: formData.get("phone") as string,
     };
 
     const validatedFields = SignupFormSchema.safeParse(fields);
@@ -51,7 +52,7 @@ export async function registerUserAction(
             },
         };
     }
-
+    console.log("nlnlnlnlnln");
     const responseData = await services.auth.registerUserService(
         {
             "username": validatedFields.data.email,

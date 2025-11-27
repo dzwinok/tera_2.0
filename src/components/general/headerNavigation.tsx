@@ -32,7 +32,6 @@ export default function HeaderNavigation() {
         fetchUser();
     }, []);
     
-    console.log(user, 'AAAAAAAAAAAAAAAAAAAAAAAA');
 
     const handleResize = () => {
         if (window.innerWidth >= 768) { // Assuming 768px is your md breakpoint
@@ -124,7 +123,7 @@ const navigationDataArray: INavigationData[] = [
     {
         navigationName: "Головна",
         navigationItems: null,
-        link: "/homepage"
+        link: "/"
     },
     {
         navigationName: "Навчання",
@@ -149,7 +148,7 @@ const navigationDataArray: INavigationData[] = [
     //{
     //    navigationName: "Компанія",
     //    navigationItems: null,
-    //    link: "/homepage"
+    //    link: "/dashboard/profile"
     //},
 
 ]

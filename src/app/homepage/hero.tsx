@@ -15,7 +15,7 @@ function Hero() {
             >
               Простір для вивчення нової професії,<br/>зростання в кар’єрі або розвитку бізнесу
             </Typography>
-            <p className="tracking-widest text-9xl text-white font-bold">
+            <p className="tracking-widest text-9xl text-white font-bold text-shadow-md">
               Teraconsult
             </p>
             <div className="mt-10">

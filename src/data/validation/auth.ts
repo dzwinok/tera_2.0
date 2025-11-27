@@ -24,11 +24,16 @@ export const SignupFormSchema = z.object({
         .string()
         .min(6, "Password must be at least 6 characters")
         .max(100, "Password must be less than 100 characters"),
-    gender: z.string(),
+    gender: z.string()
+        .min(1, "Please select one of the options"),
     birthdate: z
         .coerce.date()
         // .max(new Date("2012-01-01"), "You have to be at least 14")  TODO: uncomment
-        .min(new Date("1930-01-01"), "Invalid age. Please enter your age")
+        .min(new Date("1930-01-01"), "Invalid age. Please enter your age"),
+    phone: z
+        .string()
+        .min(10, "Incorrect phone number")
+        .max(16, "Incorrect phone number"),
 });
 
 export type SigninFormValues = z.infer<typeof SigninFormSchema>;
@@ -45,6 +50,7 @@ export type FormState = {
         birthdate?: Date;
         gender?: string;
         password?: string;
+        phone?: string;
     };
     strapiErrors?: {
         status: number;
@@ -57,5 +63,6 @@ export type FormState = {
         username?: string[];
         email?: string[];
         password?: string[];
+        phone?: string[];
     } | null;
 };

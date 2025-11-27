@@ -142,7 +142,6 @@ export default function NewsletterModal({
                         placeholder="youremail@gmail.com"
                     />
                 </div>
-
                 <div>
                     <label className="block text-sm font-medium">Номер телефону</label>
                     <input
