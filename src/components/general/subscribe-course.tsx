@@ -7,7 +7,7 @@ import { Card, CardBody, Button, Typography } from "@material-tailwind/react";
 
 export function Subscribe({title, price, courseInfo}) {
     const { isOpen, openModal, closeModal } = useNewsletterModal();
-    const [confirmed, setConfirmed] = useState<null | { email: string; phone: string; digestType: string }>(null);
+    const [confirmed, setConfirmed] = useState<null | { email: string; phone: string; }>(null);
 
     const handleSubmit = (data: { email: string; phone: string; digestType: string }) => {
         // тут ти можеш відправити запит на сервер або зберегти дані
@@ -17,7 +17,7 @@ export function Subscribe({title, price, courseInfo}) {
         closeModal();
     };
     return (
-        <div className="py-8 grid place-items-center">
+        <div id="subscribe-course" className="py-8 grid place-items-center">
             <section className="container mx-auto px-[20%]">
                 
                 <Card className="px-6 pb-5 bg-tera-dark-green bg-opacity-25">
@@ -68,7 +68,7 @@ export function Subscribe({title, price, courseInfo}) {
                                     Записатись
                                 </Button>
                                 
-                                <NewsletterModal isOpen={isOpen} onClose={closeModal} onSubmit={handleSubmit}/>
+                                <NewsletterModal isOpen={isOpen} onClose={closeModal} onSubmit={handleSubmit} title={title}/>
                                 
                             </div>
                         </div>
@@ -77,7 +77,7 @@ export function Subscribe({title, price, courseInfo}) {
                 {confirmed && (
                     <div className="flex justify-center ">
                         <div className="mt-4 msg-box text-center">
-                            Запис на курс <b>{confirmed.digestType}</b> підтверджено. Очікуйте листа.
+                            Запис на курс підтверджено. Очікуйте листа в електронній пошті.
                         </div>
                     </div>
                 )}

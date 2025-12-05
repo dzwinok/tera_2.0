@@ -386,7 +386,7 @@ export interface ApiCourseTypeCourseType extends Struct.CollectionTypeSchema {
   attributes: {
     additional_descr1: Schema.Attribute.Blocks;
     additional_descr2: Schema.Attribute.Blocks;
-    course: Schema.Attribute.Relation<'oneToOne', 'api::course.course'>;
+    courses: Schema.Attribute.Relation<'oneToMany', 'api::course.course'>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -398,6 +398,7 @@ export interface ApiCourseTypeCourseType extends Struct.CollectionTypeSchema {
       'api::course-type.course-type'
     > &
       Schema.Attribute.Private;
+    price: Schema.Attribute.Integer;
     publishedAt: Schema.Attribute.DateTime;
     small_title1: Schema.Attribute.String;
     small_title2: Schema.Attribute.String;
@@ -419,9 +420,8 @@ export interface ApiCourseCourse extends Struct.CollectionTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
-    body: Schema.Attribute.String;
     course_type: Schema.Attribute.Relation<
-      'oneToOne',
+      'manyToOne',
       'api::course-type.course-type'
     >;
     createdAt: Schema.Attribute.DateTime;
@@ -438,26 +438,6 @@ export interface ApiCourseCourse extends Struct.CollectionTypeSchema {
     num_lessons: Schema.Attribute.Integer & Schema.Attribute.Required;
     publishedAt: Schema.Attribute.DateTime;
     start_date: Schema.Attribute.Date;
-    type: Schema.Attribute.Enumeration<
-      [
-        'microsoft_office',
-        'universal',
-        'win_base',
-        'avk-5',
-        'comp_graphic',
-        'coreldraw',
-        'photoshop',
-        'adobe_indesign',
-        'autocad',
-        'archicad',
-        'lira',
-        'studio3dmax',
-        'c',
-        'c_plus_plus',
-        'one_c',
-      ]
-    > &
-      Schema.Attribute.Required;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;

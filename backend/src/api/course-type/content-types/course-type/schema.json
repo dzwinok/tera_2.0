@@ -20,9 +20,12 @@
     "description": {
       "type": "blocks"
     },
-    "course": {
+    "price": {
+      "type": "integer"
+    },
+    "courses": {
       "type": "relation",
-      "relation": "oneToOne",
+      "relation": "oneToMany",
       "target": "api::course.course",
       "mappedBy": "course_type"
     },

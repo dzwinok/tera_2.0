@@ -35,7 +35,7 @@ export default function Page(){
                 <CourseProgram programmArray={programmArray} />
     
                 
-                <div className="py-8 flex flex-row justify-between flex-wrap ">
+                <div id="subscribe-course" className="py-8 flex flex-row justify-between flex-wrap ">
                     <div
                         className="container bg-tera-dark-green bg-opacity-25 text-gray-700 p-4 rounded-lg shadow-lg w-1/4 mx-auto">
                         <div className="text-2xl h-16 font-semibold mb-4 align-middle">Курс "Комп'ютерна графіка"</div>

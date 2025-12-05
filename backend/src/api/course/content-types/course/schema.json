@@ -11,27 +11,6 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "type": {
-      "type": "enumeration",
-      "required": true,
-      "enum": [
-        "microsoft_office",
-        "universal",
-        "win_base",
-        "avk-5",
-        "comp_graphic",
-        "coreldraw",
-        "photoshop",
-        "adobe_indesign",
-        "autocad",
-        "archicad",
-        "lira",
-        "studio3dmax",
-        "c",
-        "c_plus_plus",
-        "one_c"
-      ]
-    },
     "start_date": {
       "type": "date"
     },
@@ -44,9 +23,6 @@
     "is_active": {
       "type": "boolean"
     },
-    "body": {
-      "type": "string"
-    },
     "duration": {
       "type": "integer",
       "required": true
@@ -57,9 +33,9 @@
     },
     "course_type": {
       "type": "relation",
-      "relation": "oneToOne",
+      "relation": "manyToOne",
       "target": "api::course-type.course-type",
-      "inversedBy": "course"
+      "inversedBy": "courses"
     }
   }
 }

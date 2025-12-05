@@ -114,7 +114,7 @@ export async function getUserMeService(): Promise<TStrapiResponse<TAuthUser>> {
     if (!authToken)
         return { success: false, data: undefined, error: undefined, status: 401 };
 
-    const url = new URL("/api/users/me", baseUrl);
+    const url = new URL("/api/users/me?populate[courses][populate][0]=course_type", baseUrl);
 
     try {
         const response = await fetch(url.href, {

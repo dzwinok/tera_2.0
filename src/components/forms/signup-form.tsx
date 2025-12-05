@@ -13,7 +13,6 @@ import {
     CardFooter,
     Card,
 } from "@/components/ui/card";
-
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
@@ -36,8 +35,7 @@ const styles = {
     content: "space-y-4",
     fieldGroup: "space-y-2",
     footer: "flex flex-col",
-    button:
-        "w-full bg-tera-green hover:bg-tera-dark-green text-white font-bold py-2 px-4 rounded-xl",
+    button: "w-full bg-tera-green hover:bg-tera-dark-green text-white font-bold py-2 px-4 rounded-xl",
     prompt: "mt-4 text-center text-sm",
     rowInputs: "flex flex-row justify-between",
     link: "underline ml-2",
@@ -57,7 +55,6 @@ export function SignupForm() {
     );
     
     const [genderValue, setGenderValue] = useState<string>("");
-    
     useEffect(() => {
         const g = formState?.data?.gender;
         setGenderValue(typeof g === "string" ? g : "");
