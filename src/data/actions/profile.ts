@@ -1,6 +1,6 @@
 "use server";
-import { z } from "zod";
-import { services } from "@/data/services";
+import {z} from "zod";
+import {services} from "@/data/services";
 import {
     ProfileFormSchema,
     type ProfileFormState,
@@ -17,7 +17,7 @@ export async function updateProfileAction(
     console.dir(fields);
 
     const validatedFields = ProfileFormSchema.safeParse(fields);
-    console.log({ 
+    console.log({
         ...prevState.data,
         ...fields,
     })
@@ -88,7 +88,7 @@ export async function updateProfileAction(
         ...fields,
     })
     return {
-        success: false,
+        success: true,
         message: "Successfully updated form",
         strapiErrors: null,
         zodErrors: null,

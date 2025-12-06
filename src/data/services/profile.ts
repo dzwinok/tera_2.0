@@ -49,7 +49,7 @@ export async function updateProfileCoursesService(
     if (!authToken) throw new Error("You are not authorized");
     let courses = user?.courses.map((item) => item.id);
     console.log("courses", courses)
-    courses = {...courses, courseId}
+    courses = {"courses": [...courses, courseId]}
     console.log("courses22", courses)
     
     const url = new URL("/api/users/" + userId, baseUrl);
@@ -58,7 +58,6 @@ export async function updateProfileCoursesService(
         courses,
         { authToken }
     );
-
 
     return result;
 }

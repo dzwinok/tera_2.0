@@ -21,7 +21,6 @@ export type ProfileFormState = {
     data?: {
         firstname?: string;
         lastname?: string;
-        
     };
     strapiErrors?: {
         status: number;
@@ -33,6 +32,23 @@ export type ProfileFormState = {
         firstname?: string[];
         lastname?: string[];
         
+    } | null;
+};
+export type ProfileCoursesFormState = {
+    success?: boolean;
+    message?: string;
+    data?: {
+        courses?: any[];
+    } | number;
+    strapiErrors?: {
+        status: number;
+        name: string;
+        message: string;
+        details?: Record<string, string[]>;
+    } | null;
+    zodErrors?: {
+        courses?: any[];
+
     } | null;
 };
 

@@ -48,9 +48,8 @@ export function OtherCourses() {
         <Typography
           variant="lead"
           className="mx-auto w-full px-4 font-normal !text-gray-500 lg:w-6/12"
-        > {/*TODO: change this text*/}
-          Looking to elevate your web development skills? Browse through 1,000+
-          web development courses and find the one that fits your needs.
+        > 
+          Відкрийте для себе інші навчальні можливості! Перегляньте деталі наших курсів та оберіть найцікавіший для себе.
         </Typography>
       </div>
       <div className="container mx-auto grid grid-cols-1 gap-x-10 gap-y-20 md:grid-cols-2 xl:grid-cols-4">

@@ -3,7 +3,8 @@ import {
     loginUserService,
     getUserMeService,
 } from "./auth";
-import { updateProfileService } from "./profile";
+import { updateProfileService, updateProfileCoursesService } from "./profile";
+import { getCourseByCourseTypeService } from "./courses";
 
 export const services = {
     auth: {
@@ -13,5 +14,9 @@ export const services = {
     },
     profile: {
         updateProfileService,
+        updateProfileCoursesService,
     },
+    courses: {
+        getCourseByCourseTypeService,
+    }
 };

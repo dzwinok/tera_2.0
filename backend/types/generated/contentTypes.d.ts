@@ -398,7 +398,6 @@ export interface ApiCourseTypeCourseType extends Struct.CollectionTypeSchema {
       'api::course-type.course-type'
     > &
       Schema.Attribute.Private;
-    price: Schema.Attribute.Integer;
     publishedAt: Schema.Attribute.DateTime;
     small_title1: Schema.Attribute.String;
     small_title2: Schema.Attribute.String;
@@ -436,6 +435,7 @@ export interface ApiCourseCourse extends Struct.CollectionTypeSchema {
     > &
       Schema.Attribute.Private;
     num_lessons: Schema.Attribute.Integer & Schema.Attribute.Required;
+    price: Schema.Attribute.Integer;
     publishedAt: Schema.Attribute.DateTime;
     start_date: Schema.Attribute.Date;
     updatedAt: Schema.Attribute.DateTime;

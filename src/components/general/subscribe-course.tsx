@@ -5,7 +5,7 @@ import { useNewsletterModal } from "/backend/node_modules/@dnd-kit/utilities/dis
 import { Card, CardBody, Button, Typography } from "@material-tailwind/react";
 //TODO: path to file useNewsletterModal is local (i have to crate a copy of this file in /src/hooks/useNewsletterModal.tsx)
 
-export function Subscribe({title, price, courseInfo}) {
+export function Subscribe({id, title, price, courseInfo}) {
     const { isOpen, openModal, closeModal } = useNewsletterModal();
     const [confirmed, setConfirmed] = useState<null | { email: string; phone: string; }>(null);
 
@@ -16,8 +16,9 @@ export function Subscribe({title, price, courseInfo}) {
         // Закриваємо модалку через closeModal
         closeModal();
     };
+    
     return (
-        <div id="subscribe-course" className="py-8 grid place-items-center">
+        <div key={id} id="subscribe-course" className="py-8 grid place-items-center">
             <section className="container mx-auto px-[20%]">
                 
                 <Card className="px-6 pb-5 bg-tera-dark-green bg-opacity-25">
@@ -68,7 +69,7 @@ export function Subscribe({title, price, courseInfo}) {
                                     Записатись
                                 </Button>
                                 
-                                <NewsletterModal isOpen={isOpen} onClose={closeModal} onSubmit={handleSubmit} title={title}/>
+                                <NewsletterModal isOpen={isOpen} onClose={closeModal} onSubmit={handleSubmit} title={title} id={id}/>
                                 
                             </div>
                         </div>

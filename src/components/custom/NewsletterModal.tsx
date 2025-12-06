@@ -13,6 +13,7 @@ import { LoggedInUser } from "@/components/custom/logged-in-user";
 import {services} from "@/data/services";
 import Link from "next/link";
 import {TAuthUser, TStrapiResponse} from "@/types";
+import {updateProfileCoursesAction} from "@/data/actions/user-courses";
 
 export interface NewsletterModalData {
     email: string;
@@ -57,17 +58,19 @@ function LoginWindow() {
     )
 }
 
-function CourseConfirm() {
+export const CourseConfirm = ({ title, id }) => {
+    console.log("ID ID ID ID ID ID", id)
     return(
         <div>
             <h2 className="text-lg font-semibold text-center">
-                Ви впевнені, що хочете записатись на курс ?
+                Ви впевнені, що хочете записатись на курс "{title}"?
             </h2>
             <div className="pt-6">
                 <span className="text-gray-500 text-xs">
                     *підтвердивши реєстрацію, Ви подаєте заявку на даний курс (жодної попередньої оплати не потрібно)
                 </span>
-                <button type="submit" className="w-full rounded bg-tera-green py-2 mt-4 text-white">
+                <button onClick={() => updateProfileCoursesAction(id)} 
+                        className="w-full rounded bg-tera-green py-2 mt-4 text-white">
                     Підтвердити
                 </button>
             </div>
@@ -130,6 +133,7 @@ export const NewsletterModal: React.FC<NewsletterModalProps> = ({
                                                                     onClose,
                                                                     onSubmit,
                                                                     title,
+                                                                    id,
                                                                     hasCloseBtn = true,
                                                                 }) => {
     const dialogRef = useRef<HTMLDialogElement | null>(null);
@@ -223,8 +227,8 @@ export const NewsletterModal: React.FC<NewsletterModalProps> = ({
 
         if (isOutside) onClose();
     };
-    
 
+    
     return (
         <dialog
             ref={dialogRef}
@@ -247,12 +251,12 @@ export const NewsletterModal: React.FC<NewsletterModalProps> = ({
                     </button>
                 )}
 
-                <form onSubmit={handleSubmit} className="space-y-4 pt-6">
+                <div className="space-y-4 pt-6">
                     {user ?
                         (<LoginWindow />) :
-                        (<CourseConfirm  />) 
+                        (<CourseConfirm title={title} id={id}/>) 
                     }
-                </form>
+                </div>
 
                 
             </div>

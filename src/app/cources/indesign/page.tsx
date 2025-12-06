@@ -4,6 +4,9 @@ import Popup from "@/components/general/popup"
 import Discounts from "@/components/general/discounts"
 import CourseProgram from "@/components/general/program"
 import Subscribe from "@/components/general/subscribe-course"
+import React, {useState, useEffect} from "react";
+import { getCourseByCourseType } from "@/data/actions/course-types";
+import {services} from "@/data/services";
 
 const styles = {
     main: "w-full px-[20%] flex flex-col",
@@ -11,18 +14,51 @@ const styles = {
     header: "text-tera-green leading-[72px] text-[62px] font-[600] py-5",
 };
 
-export default function Page(){
+function formatNumberWithSpaces(value: number): string {
+    return value.toLocaleString("en-US").replace(/,/g, " ");
+}
+function formatDate(date: string): string {
+    if (!date) return "";
 
-    const indesignInfo = [
-        { label: "Плановий старт:", value: "09.02.2026" },
-        { label: "Тривалість навчання:", value: "3 місяці" },
-        { label: "Кількість занять:", value: "15 занять" },
-    ];
+    const [year, month, day] = date.split("-");
+    return `${day}.${month}.${year}`;
+}
+
+export default function Page(){
+    const documentId = "uuni3felrrw5lwarrf43ba9a"
+    const [courseTypeData, setCourseTypeData] = useState(null);
+    useEffect(() => {
+        async function load() {
+            const res = await getCourseByCourseType(documentId);
+            setCourseTypeData(res);
+        }
+        load();
+    }, []);
+    
+    const course_list = [];
+    console.log("COURSES DATA", courseTypeData)
+    if (courseTypeData?.data?.courses) {
+        for (let i = 0; i < courseTypeData.data.courses.length; i++) {
+            const indesignInfo = [
+                {label: "Плановий старт:", value: formatDate(courseTypeData.data.courses[i].start_date)},
+                {label: "Тривалість навчання:", value: courseTypeData.data.courses[i].duration + " місяці"},
+                {label: "Кількість занять:", value: courseTypeData.data.courses[i].num_lessons + " занять"},
+            ];
+            course_list.push(
+                <Subscribe id={courseTypeData.data.courses[i].id}
+                           title={courseTypeData.data.title}
+                           price={formatNumberWithSpaces(courseTypeData.data.courses[i].price)}
+                           courseInfo={indesignInfo}
+                />
+            );
+        }
+    }
 
     return(
         <div>
             <div className={styles.main}>
                 <div className={styles.text}>
+                    <h2 className={styles.header}>Adobe InDesign</h2>
                     <p>Курс <b>InDesign</b> орієнтований на освоєння однієї із найпопулярніших програм додрукової підготовки поліграфічної продукції. 
                         <b> InDesign</b> широко застосовується для верстки і макетування від простих завдань до складних проектів у сфері поліграфії. За допомогою <b>InDesign</b> можна зверстати макети сторінок для книг, журналів, фотокниг, рекламної продукції і навіть інтернет-сторінок.</p>
                     <p>В курсі <b>InDesign</b> розглядаються як теоретичні, так і практичні аспекти верстки, підготовки продукції до друку, правила дизайну, композиція, інструменти програми <b>InDesign</b>, її функції, налаштування, ефекти, секрети майстерності, практичні поради і нюанси роботи в <b>InDesign</b>, для пошуку яких самостійно Вам довелося б переглянути не один підручник.</p>
@@ -31,7 +67,8 @@ export default function Page(){
                 </div>
                 <Popup/>
                 <CourseProgram programmArray={programmArray} />
-                <Subscribe title="Adobe InDesign" price="6 000" courseInfo={indesignInfo}/>
+                <div>{course_list}</div>
+                {/*<Subscribe title="Adobe InDesign" price="6 000" courseInfo={indesignInfo}/>*/}
     
             </div>
             <OtherCourses/>

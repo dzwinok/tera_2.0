@@ -99,6 +99,21 @@ export type TAuthUser = {
     publishedAt: string;
 };
 
+export type TCourseType = {
+    id: number;
+    documentId: string;
+    title: string;
+    description?: string[] | null;
+    small_title1?: string | null;
+    additional_descr1: string[] | null;
+    small_title2: string | null;
+    additional_descr2: string[] | null;
+    courses: any[];
+    createdAt: string;
+    updatedAt: string;
+    publishedAt: string;
+};
+
 export type TStrapiResponse<T = null> = {
     success: boolean;
     data?: T;
