@@ -52,7 +52,6 @@ export async function registerUserAction(
             },
         };
     }
-    console.log("nlnlnlnlnln");
     const responseData = await services.auth.registerUserService(
         {
             "username": validatedFields.data.email,

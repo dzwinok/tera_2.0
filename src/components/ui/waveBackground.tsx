@@ -50,13 +50,14 @@ export const WavyBackground = ({
   const init = () => {
     canvas = canvasRef.current;
     ctx = canvas.getContext("2d");
-    w = ctx.canvas.width = window.innerWidth; // w = ctx.canvas.width = window.innerWidth-15;
-    h = ctx.canvas.height = window.innerHeight*4/5;
+    //w = ctx.canvas.width = window.innerWidth; TODO: fix this background width by a normal way
+    w = ctx.canvas.width = window.innerWidth-15;
+    h = ctx.canvas.height = window.innerHeight;
     ctx.filter = `blur(${blur}px)`;
     nt = 0;
     window.onresize = function () {
       w = ctx.canvas.width = window.innerWidth;
-      h = ctx.canvas.height = window.innerHeight*4/5;
+      h = ctx.canvas.height = window.innerHeight;
       ctx.filter = `blur(${blur}px)`;
     };
     render();

@@ -4,6 +4,9 @@ import Popup from "@/components/general/popup"
 import Discounts from "@/components/general/discounts"
 import CourseProgram from "@/components/general/program"
 import Subscribe from "@/components/general/subscribe-course"
+import React, {useEffect, useState} from "react";
+import {getCourseByCourseType} from "@/data/actions/course-types";
+import {services} from "@/data/services";
 
 const styles = {
     main: "w-full px-[20%] flex flex-col",
@@ -11,14 +14,65 @@ const styles = {
     header: "text-tera-green leading-[72px] text-[62px] font-[600] py-5",
 };
 
+function formatNumberWithSpaces(value: number): string {
+    return value.toLocaleString("en-US").replace(/,/g, " ");
+}
+function formatDate(date: string): string {
+    if (!date) return "";
+
+    const [year, month, day] = date.split("-");
+    return `${day}.${month}.${year}`;
+}
 
 export default function Page(){
+    const documentId = "rggdndl42xjhypusqp89h3rl"
+    const [courseTypeData, setCourseTypeData] = useState(null);
+    const [isSubscribed, setIsSubscribed] = useState(false);
 
-    const max3dInfo = [
+    const [courses, setCourses]=useState(null);
+
+    useEffect(() => {
+        const fetchUser = async () => {
+            const res = await getCourseByCourseType(documentId);
+            setCourseTypeData(res);
+            try {
+                const response = await services.auth.getUserMeService();
+                setCourses(response?.data.courses.map((item) => item.id))
+            } catch (error) {
+                console.error("Error fetching user:", error);
+            }
+        }
+        fetchUser();
+    }, []);
+
+    const course_list = [];
+    console.log("COURSES DATA", courseTypeData)
+    if (courseTypeData?.data?.courses) {
+        for (let i = 0; i < courseTypeData.data.courses.length; i++) {
+            const courseInfo = [
+                {label: "Плановий старт:", value: formatDate(courseTypeData.data.courses[i].start_date)},
+                {label: "Тривалість навчання:", value: courseTypeData.data.courses[i].duration + " місяці"},
+                {label: "Кількість занять:", value: courseTypeData.data.courses[i].num_lessons + " занять"},
+            ];
+            {/*console.log("course: ", courses)
+            console.log("courseTypeData: ", courseTypeData.data.courses[i].id)
+            console.log("courses?includes: ", courses?.includes(courseTypeData.data.courses[i].id))*/}
+            course_list.push(
+                <Subscribe id={courseTypeData.data.courses[i].id}
+                           title={courseTypeData.data.title}
+                           price={formatNumberWithSpaces(courseTypeData.data.courses[i].price)}
+                           courseInfo={courseInfo}
+                           isSubscribed={courses?.includes(courseTypeData.data.courses[i].id)}
+                />
+            );
+        }
+    }
+
+    {/*const max3dInfo = [
         { label: "Плановий старт:", value: "18.01.2026" },
         { label: "Тривалість навчання:", value: "~6 місяців" },
         { label: "Кількість занять:", value: "35 занять" },
-    ];
+    ];*/}
 
     return(
         <div>
@@ -36,12 +90,13 @@ export default function Page(){
                     <p>Четверта частина. Робота з освітленням у програмі 3DStudioMax. У цій частині курсу вивчаються властивості відбивання світла від різних поверхонь. Розглядаються також зміни вигляду текстур під впливом різного освітлення.</p>
                     <p>П'ята  частина курсу орієнтовна на візуалізацію у програмі V-Ray та Corona</p>
                     <p>В курсі розглядають не лише стандартні методи створення дизайну, а й складні приклади налаштування зовнішнього середовища, освітлення, конструювання 3D-макетів приміщень, дизайну в ньому тощо. Курс включає комплекс практичних занять, завдяки яким слухачі можуть створити самостійно повноцінний дизайн інтер'єру, розробити дизайн текстур тощо.</p>
-    
+
                 </div>
                 <Popup/>
                 <CourseProgram programmArray={programmArray} />
-                <Subscribe title="3D Studio Max" price="10 500" courseInfo={max3dInfo}/>
-                
+                <div>{course_list}</div>
+                {/*<Subscribe title="3D Studio Max" price="10 500" courseInfo={max3dInfo}/>*/}
+
             </div>
             <OtherCourses/>
             <Discounts/>

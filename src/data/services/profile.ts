@@ -41,6 +41,9 @@ export async function updateProfileService(
 export async function updateProfileCoursesService(
     courseId: number
 ): Promise<TStrapiResponse<TAuthUser>> {
+    
+    
+    
     const user = (await services.auth.getUserMeService()).data
     const userId = user?.id;
     if (!userId) throw new Error("User Id is required");

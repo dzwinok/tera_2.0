@@ -8,18 +8,16 @@ import {
 import Link from "next/link"
 import Image from "next/image";
 import logoPNG from "@/assets/images/logo.png";
-import { useEffect, useState } from "react";
-import { FaBars, FaTimes } from "react-icons/fa";
 import { services } from "@/data/services";
 import { LoggedInUser } from "@/components/custom/logged-in-user";
+import { FaBars, FaTimes } from "react-icons/fa";
+import { useEffect, useState } from "react";
 
 
 
 export default function HeaderNavigation() {
     const [nav, setNav] = useState(false);
-    const [user, setUser] = useState(null); // 🧩 store user data here
-
-    // 🔹 Fetch user data once when component mounts
+    const [user, setUser] = useState(null);
     useEffect(() => {
         const fetchUser = async () => {
             try {
@@ -110,7 +108,6 @@ export default function HeaderNavigation() {
                 ) : (
                 <Link href="/signIn" className="bg-black rounded-xl px-5 py-2.5 text-white hover:rounded-xl hover:border hover:border-white">Sign In</Link>
                     )}
-                
             </div>
             
             

@@ -58,12 +58,12 @@ export function SigninForm() {
                     </CardHeader>
                     <CardContent className={styles.content}>
                         <div className={styles.fieldGroup}>
-                            <Label htmlFor="email">Email</Label>
+                            <Label htmlFor="email">Email or username</Label>
                             <Input
                                 id="identifier"
                                 name="identifier"
                                 type="text"
-                                placeholder="email"
+                                placeholder="email/username"
                                 defaultValue={formState?.data?.identifier || ""}
                             />
                             <ZodErrors error={formState?.zodErrors?.identifier} />

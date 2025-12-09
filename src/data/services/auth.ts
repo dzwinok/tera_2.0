@@ -64,9 +64,7 @@ export async function registerUserService(
 ): Promise<TAuthServiceResponse | undefined> {
     const url = new URL("/api/auth/local/register", baseUrl);
 
-    //console.log("Hello From Register User Action24", userData);
     try {
-        // console.log("RTEST", userData);
         const response = await fetch(url, {
             method: "POST",
             headers: {

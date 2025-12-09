@@ -14,6 +14,21 @@ const styles = {
     header: "text-tera-green leading-[72px] text-[62px] font-[600] py-5",
 };
 
+/*import DOMPurify from "dompurify";
+
+export function StrapiRichText({ html }: { html: string }) {
+    if (!html) return null;
+
+    const safeHtml = DOMPurify.sanitize(html);
+
+    return (
+        <div
+            className="prose max-w-none"
+            dangerouslySetInnerHTML={{ __html: safeHtml }}
+        />
+    );
+}*/
+
 function formatNumberWithSpaces(value: number): string {
     return value.toLocaleString("en-US").replace(/,/g, " ");
 }
@@ -58,7 +73,9 @@ export default function Page(){
         <div>
             <div className={styles.main}>
                 <div className={styles.text}>
-                    <h2 className={styles.header}>Adobe InDesign</h2>
+                    <h2 className={styles.header}>{courseTypeData?.data.title}</h2>
+                    {/*<StrapiRichText html={courseTypeData?.data.description} />
+                    <p>bbb {courseTypeData?.data.description[0]}</p>*/}
                     <p>Курс <b>InDesign</b> орієнтований на освоєння однієї із найпопулярніших програм додрукової підготовки поліграфічної продукції. 
                         <b> InDesign</b> широко застосовується для верстки і макетування від простих завдань до складних проектів у сфері поліграфії. За допомогою <b>InDesign</b> можна зверстати макети сторінок для книг, журналів, фотокниг, рекламної продукції і навіть інтернет-сторінок.</p>
                     <p>В курсі <b>InDesign</b> розглядаються як теоретичні, так і практичні аспекти верстки, підготовки продукції до друку, правила дизайну, композиція, інструменти програми <b>InDesign</b>, її функції, налаштування, ефекти, секрети майстерності, практичні поради і нюанси роботи в <b>InDesign</b>, для пошуку яких самостійно Вам довелося б переглянути не один підручник.</p>

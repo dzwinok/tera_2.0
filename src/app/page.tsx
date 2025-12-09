@@ -33,7 +33,7 @@ export default async function Home() {
     const { title, description } = strapiData.data;
   return (
       <div className={roboto.className}>
-          <WavyBackground className="flex justify-center items-center pb-80">
+          <WavyBackground className="flex justify-center items-center pb-40">
               <Hero />
           </WavyBackground>
           <OnlineCourse />

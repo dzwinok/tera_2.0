@@ -9,7 +9,7 @@ export default function Discounts(){
                   
             <div className="pt-8 bg-tera-dark-green bg-opacity-25 place-items-center">
                 
-                <span className="px-[20%] text-[28px] font-[500] text-gray-800">Система наших ЗНИЖОК:</span>
+                <span className="px-[20%] text-[28px] font-[500] text-gray-800">Система наших знижок:</span>
                 <section className="px-[10%] gap-8 container mx-auto py-12 grid grid-cols-1 items-center lg:gap-0 lg:grid-cols-3 items-stretch">
                     <Card className=" flex flex-center bg-white h-full lg:w-[80%] lg:justify-self-start">
                         <CardBody>

@@ -5,7 +5,7 @@ import { useNewsletterModal } from "/backend/node_modules/@dnd-kit/utilities/dis
 import { Card, CardBody, Button, Typography } from "@material-tailwind/react";
 //TODO: path to file useNewsletterModal is local (i have to crate a copy of this file in /src/hooks/useNewsletterModal.tsx)
 
-export function Subscribe({id, title, price, courseInfo}) {
+export function Subscribe({id, title, price, courseInfo, isSubscribed}) {
     const { isOpen, openModal, closeModal } = useNewsletterModal();
     const [confirmed, setConfirmed] = useState<null | { email: string; phone: string; }>(null);
 
@@ -16,6 +16,8 @@ export function Subscribe({id, title, price, courseInfo}) {
         // Закриваємо модалку через closeModal
         closeModal();
     };
+    
+    
     
     return (
         <div key={id} id="subscribe-course" className="py-8 grid place-items-center">
@@ -65,9 +67,14 @@ export function Subscribe({id, title, price, courseInfo}) {
                                 <Typography variant="h1" color="blue-gray" className="text-3xl">
                                     {price} грн
                                 </Typography>
-                                <Button onClick={openModal} color="gray" className="py-4 px-8 my-4">
-                                    Записатись
-                                </Button>
+                                {isSubscribed ?
+                                    (< Button onClick={openModal} color="gray" className="py-4 px-8 my-4" disabled>
+                                        Запис підтверджено ✅
+                                    </Button>) :
+                                    (< Button onClick={openModal} color="gray" className="py-4 px-8 my-4">
+                                        Записатись
+                                    </Button>)
+                                }
                                 
                                 <NewsletterModal isOpen={isOpen} onClose={closeModal} onSubmit={handleSubmit} title={title} id={id}/>
                                 

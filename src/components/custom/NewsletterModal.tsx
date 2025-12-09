@@ -43,17 +43,19 @@ const createInitialData = (): NewsletterModalData => ({
 function LoginWindow() {
     
     return (
-        <div>
-            <h3>Вхід в акаунт не виявлено</h3>
-            Будь ласка, 
-            <Link className="underline ml-2" href="/signIn">
-                увійдіть
-            </Link>
-            {" "}або
-            <Link className="underline ml-2" href="/signUp">
-                створіть
-            </Link>
-            {" "}новий акаунт
+        <div className=" text-center">
+            <h3 className="text-3xl font-semibold pb-6 ">Вхід в акаунт не виявлено</h3>
+            <div className="text-xl font-semibold px-8 pb-8">
+                Будь ласка,{" "}
+                <Link className="underline hover:no-underline text-blue-800" href="/signIn">
+                    увійдіть
+                </Link>
+                {" "}або{" "}
+                <Link className="underline hover:no-underline text-blue-800" href="/signUp">
+                    створіть
+                </Link>
+                {" "}новий акаунт
+            </div>
         </div>
     )
 }
@@ -70,7 +72,7 @@ export const CourseConfirm = ({ title, id }) => {
                     *підтвердивши реєстрацію, Ви подаєте заявку на даний курс (жодної попередньої оплати не потрібно)
                 </span>
                 <button onClick={() => updateProfileCoursesAction(id)} 
-                        className="w-full rounded bg-tera-green py-2 mt-4 text-white">
+                        className="w-full rounded bg-tera-green py-2 mt-4 text-white active:bg-tera-dark-green transition-colors">
                     Підтвердити
                 </button>
             </div>
@@ -152,7 +154,6 @@ export const NewsletterModal: React.FC<NewsletterModalProps> = ({
         const fetchUser = async () => {
             try {
                 user = await services.auth.getUserMeService();
-                console.log("user12", user)
             } catch (error) {
                 console.log("Error fetching user:", error);
                 
@@ -254,7 +255,8 @@ export const NewsletterModal: React.FC<NewsletterModalProps> = ({
                 <div className="space-y-4 pt-6">
                     {user ?
                         (<LoginWindow />) :
-                        (<CourseConfirm title={title} id={id}/>) 
+                        (<CourseConfirm title={title} id={id}/>)
+                         
                     }
                 </div>
 
